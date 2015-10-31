@@ -1,0 +1,10 @@
+.login-screen.modal-in
+  .view
+    .page
+      .page-content.login-screen-content
+        .login-screen-title
+          span.octicon.octicon-bell
+        .list-block
+          a.item-link.list-button
+            span.octicon.octicon-mark-github
+            |  Sign In
