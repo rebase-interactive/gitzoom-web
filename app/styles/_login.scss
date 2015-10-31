@@ -1,5 +1,16 @@
-.login-screen-title .octicon {
-  font-size: 16px * 10;
+.login-screen-content {
+  @include display(flex);
+  @include flex-direction(column);
+  @include align-items(center);
+  @include justify-content(center);
+
+  .login-screen-title {
+    margin-bottom: 0;
+
+    .octicon {
+      font-size: 16px * 10;
+    }
+  }
 }
 
 a.item-link.list-button {
