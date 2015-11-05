@@ -10,6 +10,11 @@ module.exports = function(deployTarget) {
       bucket: process.env.AWS_BUCKET,
       region: process.env.AWS_REGION,
       filePattern: "*"
+    },
+    cloudfront: {
+      accessKeyId: process.env.AWS_KEY,
+      secretAccessKey: process.env.AWS_SECRET,
+      distributionId: process.env.AWS_DISTRIBUTION_ID
     }
   };
 
