@@ -7,31 +7,26 @@ module.exports = function(deployTarget) {
     s3: {
       accessKeyId: process.env.AWS_KEY,
       secretAccessKey: process.env.AWS_SECRET,
-      bucket: process.env.AWS_BUCKET,
-      region: process.env.AWS_REGION,
       filePattern: "*"
     },
     cloudfront: {
       accessKeyId: process.env.AWS_KEY,
-      secretAccessKey: process.env.AWS_SECRET,
-      distribution: process.env.AWS_DISTRIBUTION,
-      region: process.env.AWS_REGION
+      secretAccessKey: process.env.AWS_SECRET
     }
   };
 
-  if (deployTarget === 'development') {
-    ENV.build.environment = 'development';
-    // configure other plugins for development deploy target here
-  }
-
   if (deployTarget === 'staging') {
     ENV.build.environment = 'production';
-    // configure other plugins for staging deploy target here
+    ENV.s3.bucket = process.env.STAGING_BUCKET;
+    ENV.s3.region = process.env.STAGING_REGION;
+    ENV.cloudfront.distribution = process.env.STAGING_DISTRIBUTION;
   }
 
   if (deployTarget === 'production') {
     ENV.build.environment = 'production';
-    // configure other plugins for production deploy target here
+    ENV.s3.bucket = process.env.PRODUCTION_BUCKET;
+    ENV.s3.region = process.env.PRODUCTION_REGION;
+    ENV.cloudfront.distribution = process.env.PRODUCTION_DISTRIBUTION;
   }
 
   // Note: if you need to build some configuration asynchronously, you can return
