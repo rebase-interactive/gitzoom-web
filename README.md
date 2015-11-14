@@ -41,7 +41,19 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 ### Deploying
 
-Specify what it takes to deploy your app.
+GitZoom is deployed to AWS via ember-cli-deploy using the approach outlined in the following blog posts:
+
+- [Deploying Ember to AWS CloudFront using ember-cli-deploy](http://kevin.pfefferle.co/2015/11/01/deploying-ember-to-aws-cloudfront-using-ember-cli-deploy/)
+- [Introducing ember-cli-deploy-cloudfront and ember-cli-deploy-aws-pack](http://kevin.pfefferle.co/2015/11/10/introducing-ember-cli-deploy-cloudfront-and-ember-cli-deploy-aws-pack/)
+- [Deploying Ember to AWS Cheat Sheet](http://kevin.pfefferle.co/2015/11/14/deploying-ember-to-aws-cheat-sheet/)
+
+The configuration keys necessary for AWS deployment can be found in `.env.deploy.production.sample`. Copy this sample file to `.env.deploy.production` and insert values for each key before deployment.
+
+To deploy a new version to AWS, run the following command:
+
+```bash
+ember deploy production
+```
 
 ## Further Reading / Useful Links
 
@@ -50,3 +62,7 @@ Specify what it takes to deploy your app.
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+
+## Copyright
+
+Copyright &copy; 2015 Kevin Pfefferle. All rights reserved.  
