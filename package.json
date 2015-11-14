@@ -1,7 +1,7 @@
 {
-  "name": "gitworm",
+  "name": "gitzoom",
   "version": "0.0.0",
-  "description": "Small description for gitworm goes here",
+  "description": "Small description for gitzoom goes here",
   "private": true,
   "directories": {
     "doc": "doc",

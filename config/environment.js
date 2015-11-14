@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'gitworm',
+    modulePrefix: 'gitzoom',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',

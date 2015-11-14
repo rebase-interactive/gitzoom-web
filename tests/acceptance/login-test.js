@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import { module, test } from 'qunit';
-import startApp from 'gitworm/tests/helpers/start-app';
+import startApp from 'gitzoom/tests/helpers/start-app';
 
 module('Acceptance | login', {
   beforeEach: function() {
