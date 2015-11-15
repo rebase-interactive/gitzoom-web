@@ -1,7 +1,7 @@
 {
   "name": "gitzoom",
   "version": "0.0.0",
-  "description": "Small description for gitzoom goes here",
+  "description": "Experimental Ember.js application for triaging GitHub notifications",
   "private": true,
   "directories": {
     "doc": "doc",
@@ -12,7 +12,7 @@
     "start": "ember server",
     "test": "ember test"
   },
-  "repository": "",
+  "repository": "https://github.com/kpfefferle/gitzoom-web",
   "engines": {
     "node": ">= 0.10.0"
   },
@@ -32,7 +32,7 @@
     "ember-cli-emblem": "0.3.1",
     "ember-cli-htmlbars": "^1.0.1",
     "ember-cli-htmlbars-inline-precompile": "^0.3.1",
-    "ember-cli-ic-ajax": "0.2.1",
+    "ember-cli-ic-ajax": "0.2.4",
     "ember-cli-inject-live-reload": "^1.3.1",
     "ember-cli-qunit": "^1.0.4",
     "ember-cli-release": "0.2.8",
