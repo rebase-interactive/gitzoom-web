@@ -22,10 +22,11 @@ module.exports = function(defaults) {
   app.import('bower_components/framework7/dist/css/framework7.ios.min.css');
   app.import('bower_components/framework7/dist/css/framework7.ios.colors.min.css');
 
-  app.import('bower_components/octicons/octicons/octicons.eot', { destDir: 'assets/fonts' });
-  app.import('bower_components/octicons/octicons/octicons.woff', { destDir: 'assets/fonts' });
-  app.import('bower_components/octicons/octicons/octicons.ttf', { destDir: 'assets/fonts' });
-  app.import('bower_components/octicons/octicons/octicons.svg', { destDir: 'assets/fonts' });
+  app.import('bower_components/octicons/octicons/octicons.css');
+  app.import('bower_components/octicons/octicons/octicons.eot', { destDir: 'assets' });
+  app.import('bower_components/octicons/octicons/octicons.woff', { destDir: 'assets' });
+  app.import('bower_components/octicons/octicons/octicons.ttf', { destDir: 'assets' });
+  app.import('bower_components/octicons/octicons/octicons.svg', { destDir: 'assets' });
 
   return app.toTree();
 };
