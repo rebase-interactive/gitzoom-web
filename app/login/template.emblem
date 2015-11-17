@@ -5,6 +5,6 @@
         .login-screen-title
           span.octicon.octicon-bell
         .list-block
-          a.item-link.list-button
+          a.item-link.list-button{action 'authenticate'}
             span.octicon.octicon-mark-github
             |  Sign In
