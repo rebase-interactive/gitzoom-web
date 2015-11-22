@@ -5,7 +5,13 @@ export default Ember.Controller.extend({
 
   actions: {
     authenticate() {
-      this.get('session').authenticate('authenticator:torii', 'github-oauth2');
+      this.get('session').authenticate('authenticator:torii', 'github-oauth2')
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((response) => {
+        console.log(response);
+      });
     }
   }
 });
