@@ -19,7 +19,8 @@ module.exports = function(environment) {
     torii: {
       providers: {
         'github-oauth2': {
-          clientId: process.env.GITHUB_CLIENT_ID
+          clientId: process.env.GITHUB_CLIENT_ID,
+          scope: 'notifications'
         }
       }
     }
