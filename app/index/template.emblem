@@ -1,1 +1,3 @@
 h1 Index
+
+button{action "logOut"} Log Out
