@@ -1,3 +1,21 @@
-h1 Index
-
-button{action "logOut"} Log Out
+.views
+  .view.view-left.navbar-through
+    .navbar
+      .navbar-inner
+        .left
+          a.link{action "logOut"}
+            i.octicon.octicon-sign-out
+        .center.sliding Notifications
+        .right
+    .pages
+      .page
+        .page-content
+  .view.view-main.navbar-through
+    .navbar
+      .navbar-inner
+        .left
+        .center Notification Detail
+        .right
+    .pages
+      .page
+        .page-content
