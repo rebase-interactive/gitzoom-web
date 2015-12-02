@@ -1,8 +1,5 @@
-import { Promise } from "liquid-fire";
+import { reveal } from "./reveal";
 
-export default function() {
-  if (this.newElement) {
-    this.newElement.css({visibility: ''});
-  }
-  return Promise.resolve();
+export default function(opts) {
+  return reveal.call(this, 'y', 1, opts);
 }
