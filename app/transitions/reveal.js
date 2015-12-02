@@ -1,6 +1,6 @@
 import { Promise } from "liquid-fire";
 
-export default function reveal(dimension, direction, opts) {
+export default function reveal() {
   if (this.newElement) {
     this.newElement.css({visibility: ''});
   }
