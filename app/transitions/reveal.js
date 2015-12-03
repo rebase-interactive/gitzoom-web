@@ -1,6 +1,6 @@
 import { animate, Promise, isAnimating, finish } from "liquid-fire";
 
-export default function revealUnder(dimension, direction, opts) {
+export default function reveal(dimension, direction, opts) {
   let property, measure, firstStep;
   let oldParams = {};
   const revealingElement = findRevealingElement(this);
