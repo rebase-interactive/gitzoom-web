@@ -1,5 +1,5 @@
-import { reveal } from "./reveal";
+import revealUnder from "./reveal-under";
 
-export default function() {
-  return reveal.call();//this, 'y', 1, opts);
+export default function(opts) {
+  return revealUnder.call(this, 'y', 1, opts);
 }
