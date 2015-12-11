@@ -10,6 +10,7 @@ export default Ember.Controller.extend({
       this.get('session').authenticate('authenticator:torii', 'github-oauth2')
         .then(() => {
           this.set('isProcessing', true);
+          console.log(this.get('session.data.authenticated.authorizationCode'));
         })
         .catch(() => {
           // Don't throw error openly if user closes auth window
