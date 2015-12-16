@@ -1,16 +1,7 @@
-import Ember from 'ember';
-import { module, test } from 'qunit';
-import startApp from 'gitzoom/tests/helpers/start-app';
+import { test } from 'qunit';
+import moduleForAcceptance from 'gitzoom/tests/helpers/module-for-acceptance';
 
-module('Acceptance | login', {
-  beforeEach: function() {
-    this.application = startApp();
-  },
-
-  afterEach: function() {
-    Ember.run(this.application, 'destroy');
-  }
-});
+moduleForAcceptance('Acceptance | login');
 
 test('visiting / when logged out should redirect to /login', function(assert) {
   visit('/');
