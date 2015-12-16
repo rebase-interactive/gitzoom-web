@@ -21,7 +21,7 @@ export default Ember.Controller.extend({
               if (data.error) {
                 alert('Error: ' + data.error);
               } else {
-                this.set('session.data.access_token', data.token);
+                this.set('session.data.accessToken', data.token);
               }
             });
         })
