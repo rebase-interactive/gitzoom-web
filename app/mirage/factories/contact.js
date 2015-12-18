@@ -11,7 +11,7 @@ export default Mirage.Factory.extend({
   // tall: true,                           // booleans
 
   // email: function(i) {                  // and functions
-  //   return 'person' + i + '@test.com';
+  //   return `person${i}@test.com`;
   // },
 
   // firstName: faker.name.firstName,       // using faker

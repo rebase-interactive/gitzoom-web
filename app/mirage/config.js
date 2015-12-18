@@ -2,7 +2,7 @@ import ENV from 'gitzoom/config/environment';
 
 export default function() {
 
-  this.passthrough('https://' + ENV.GATEKEEPER_HOST + '/**');
+  this.passthrough(`https://${ENV.GATEKEEPER_HOST}/**`);
 
   // These comments are here to help you get started. Feel free to delete them.
 

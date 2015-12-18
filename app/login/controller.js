@@ -14,12 +14,12 @@ export default Ember.Controller.extend({
           this.set('isProcessing', true);
 
           const authCode = this.get('session.data.authenticated.authorizationCode');
-          const gatekeeperURL =  'https://' + ENV.GATEKEEPER_HOST + '/authenticate/' + authCode;
+          const gatekeeperURL =  `https://${ENV.GATEKEEPER_HOST}/authenticate/${authCode}`;
 
           return this.get('ajax').request(gatekeeperURL)
             .then((data) => {
               if (data.error) {
-                alert('Error: ' + data.error);
+                alert(`Error: ${data.error}`);
               } else {
                 this.set('session.data.accessToken', data.token);
               }
