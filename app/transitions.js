@@ -1,7 +1,7 @@
 export default function(){
   this.transition(
     this.fromRoute('login'),
-    this.toRoute('index'),
+    this.toRoute('protected'),
     this.use('revealDown', { easing: 'easeInOutCubic' })
   );
 }
