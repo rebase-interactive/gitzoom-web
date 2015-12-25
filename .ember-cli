@@ -7,5 +7,5 @@
   */
   "disableAnalytics": false,
   "usePods": true,
-  "verbose": true
+  "deployVerbose": true
 }
