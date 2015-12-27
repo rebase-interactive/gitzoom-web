@@ -15,8 +15,5 @@
     "pretender": "0.10.1",
     "lodash": "3.10.0",
     "Faker": "3.0.1"
-  },
-  "resolutions": {
-    "ember": "2.2.0"
   }
 }
