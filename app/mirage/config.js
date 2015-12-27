@@ -13,7 +13,7 @@ export default function() {
   */
   this.urlPrefix = 'https://api.github.com';
   // this.namespace = '';    // make this `api`, for example, if your API is namespaced
-  // this.timing = 400;      // delay for each request, automatically set to 0 during testing
+  this.timing = 400;      // delay for each request, automatically set to 0 during testing
 
   /*
     Route shorthand cheatsheet
@@ -31,7 +31,9 @@ export default function() {
     this.get('/contacts/:id', 'user');
     this.get('/contacts/:id', ['contact', 'addresses']);
   */
-  this.get('/user');
+  this.get('/user', function(db) {
+    return db.users[0];
+  });
 
   /*
     POST shorthands
