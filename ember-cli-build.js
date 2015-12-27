@@ -12,6 +12,7 @@ module.exports = function(defaults) {
         production: '.env.production'
       }
     }
+    // Add options here
   });
 
   // Use `app.import` to add additional libraries to the generated
