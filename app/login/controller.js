@@ -1,32 +1,16 @@
 import Ember from 'ember';
-import ENV from 'gitzoom/config/environment';
 
 export default Ember.Controller.extend({
-  ajax: Ember.inject.service(),
   session: Ember.inject.service('session'),
 
   isProcessing: false,
 
   actions: {
     authenticate() {
+      this.set('isProcessing', true);
       return this.get('session').authenticate('authenticator:torii', 'github')
-        .then(() => {
-          this.set('isProcessing', true);
-
-          const authCode = this.get('session.data.authenticated.authorizationCode');
-          const gatekeeperURL =  `https://${ENV.GATEKEEPER_HOST}/authenticate/${authCode}`;
-
-          return this.get('ajax').request(gatekeeperURL)
-            .then((data) => {
-              if (data.error) {
-                alert(`Error: ${data.error}`);
-              } else {
-                this.set('session.data.accessToken', data.token);
-              }
-            });
-        })
         .catch(() => {
-          // Don't throw console error if user dismisses auth window
+          this.set('isProcessing', false);
         });
     }
   }
