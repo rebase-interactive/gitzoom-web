@@ -31,9 +31,10 @@ export default function() {
     this.get('/contacts/:id', 'user');
     this.get('/contacts/:id', ['contact', 'addresses']);
   */
-  this.get('/user', function(db) {
-    return db.users[0];
-  });
+  this.passthrough('/user');
+  // this.get('/user', function(db) {
+  //   return db.users[0];
+  // });
 
   /*
     POST shorthands
