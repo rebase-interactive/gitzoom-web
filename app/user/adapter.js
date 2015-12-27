@@ -7,6 +7,6 @@ export default ApplicationAdapter.extend({
   },
   findRecord(store, type, id, snapshot) {
     if (id === 'me') { id = null; }
-    this._super(store, type, id, snapshot);
+    return this._super(store, type, id, snapshot);
   }
 });
