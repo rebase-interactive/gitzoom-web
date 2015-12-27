@@ -4,16 +4,10 @@ export default function() {
 
   this.passthrough(`https://${ENV.GATEKEEPER_HOST}/**`);
 
-  // These comments are here to help you get started. Feel free to delete them.
-
-  /*
-    Config (with defaults).
-
-    Note: these only affect routes defined *after* them!
-  */
   this.urlPrefix = 'https://api.github.com';
-  // this.namespace = '';    // make this `api`, for example, if your API is namespaced
   this.timing = 400;      // delay for each request, automatically set to 0 during testing
+
+  this.passthrough('/user');
 
   /*
     Route shorthand cheatsheet
@@ -31,10 +25,6 @@ export default function() {
     this.get('/contacts/:id', 'user');
     this.get('/contacts/:id', ['contact', 'addresses']);
   */
-  this.passthrough('/user');
-  // this.get('/user', function(db) {
-  //   return db.users[0];
-  // });
 
   /*
     POST shorthands
@@ -85,6 +75,8 @@ export default function() {
 /*
 You can optionally export a config that is only loaded during tests
 export function testConfig() {
-
+  this.get('/user', function(db) {
+    return db.users[0];
+  });
 }
 */
