@@ -16,6 +16,8 @@ module('Acceptance | login', {
 });
 
 test('visiting / when logged out should redirect to /login', function(assert) {
+  assert.expect(1);
+
   visit('/');
 
   andThen(function() {
@@ -24,6 +26,8 @@ test('visiting / when logged out should redirect to /login', function(assert) {
 });
 
 test('visiting /login when logged in should redirect to /', function(assert) {
+  assert.expect(1);
+
   authenticateSession(application);
   visit('/login');
 
