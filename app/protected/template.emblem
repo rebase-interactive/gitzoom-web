@@ -3,7 +3,7 @@
     .navbar
       .navbar-inner
         .left
-          a.link{action "logOut"}
+          a.link{action "logOut"} title="Log Out"
             img.avatar alt=model.login src=model.avatarUrl
         .center.sliding Notifications
         .right
