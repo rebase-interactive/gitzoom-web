@@ -9,7 +9,7 @@ export default Ember.Controller.extend({
 
   actions: {
     authenticate() {
-      return this.get('session').authenticate('authenticator:torii', 'github-oauth2')
+      return this.get('session').authenticate('authenticator:torii', 'github')
         .then(() => {
           this.set('isProcessing', true);
 
