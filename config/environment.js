@@ -20,7 +20,7 @@ module.exports = function(environment) {
       'default-src': "'none'",
       'script-src': "'self'",
       'font-src': "'self'",
-      'connect-src': `'self' ${process.env.GATEKEEPER_HOST} api.github.com`,
+      'connect-src': "'self' api.github.com " + process.env.GATEKEEPER_HOST,
       'img-src': "'self' data: *.githubusercontent.com",
       'style-src': "'self'",
       'media-src': "'self'"
