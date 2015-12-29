@@ -8,6 +8,7 @@
   "disableAnalytics": false,
   "usePods": true,
   "ember-cli-deploy": {
-    "verbose": true
+    "verbose": true,
+    "activate": true
   }
 }

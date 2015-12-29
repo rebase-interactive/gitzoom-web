@@ -3,9 +3,6 @@
 module.exports = function(deployTarget) {
   var ENV = {
     build: {},
-    pipeline: {
-      activateOnDeploy: true
-    },
     s3: {
       accessKeyId: process.env.AWS_KEY,
       secretAccessKey: process.env.AWS_SECRET,
