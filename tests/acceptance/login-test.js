@@ -28,10 +28,21 @@ test('visiting / when logged out should redirect to /login', function(assert) {
 test('visiting /login when logged in should redirect to /', function(assert) {
   assert.expect(1);
 
-  authenticateSession(application);
+  authenticateSession(application, {accessToken: 'TOKEN'});
   visit('/login');
 
   andThen(function() {
     assert.equal(currentURL(), '/');
+  });
+});
+
+test('layout should show logged in user avatar', function(assert) {
+  assert.expect(1);
+
+  authenticateSession(application, {accessToken: 'TOKEN'});
+  visit('/');
+
+  andThen(function() {
+    assert.notEqual($('img.avatar').attr('src'), '');
   });
 });

@@ -1,3 +1,4 @@
+import Mirage from 'ember-cli-mirage';
 import ENV from 'gitzoom/config/environment';
 
 export default function() {
@@ -74,7 +75,14 @@ export default function() {
 
 /* Config that is only loaded during tests */
 export function testConfig() {
-  this.get('/user', function(db) {
-    return db.users[0];
+  this.get('/user', function(db, request) {
+    if(request.requestHeaders.Authorization === "token TOKEN") {
+      return {
+        'login': 'kpfefferle',
+        'avatar_url': 'https://avatars.githubusercontent.com/u/250934?v=3'
+      };
+    } else {
+      return new Mirage.Response(401, {}, {});
+    }
   });
 }
