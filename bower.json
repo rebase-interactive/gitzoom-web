@@ -14,7 +14,7 @@
     "bourbon": "4.2.6",
     "octicons": "3.3.0",
     "pretender": "0.10.1",
-    "lodash": "3.10.0",
+    "lodash": "3.10.1",
     "Faker": "3.0.1"
   },
   "resolutions": {
