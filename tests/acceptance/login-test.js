@@ -37,12 +37,18 @@ test('visiting /login when logged in should redirect to /', function(assert) {
 });
 
 test('layout should show logged in user avatar', function(assert) {
-  assert.expect(1);
+  // jshint undef:false
+  assert.expect(2);
 
+  const userLogin = 'kpfefferle';
+  const userAvatar = 'https://avatars.githubusercontent.com/u/250934?v=3';
+  server.create('user', { login: userLogin, avatar_url: userAvatar });
   authenticateSession(application, {accessToken: 'TOKEN'});
   visit('/');
 
   andThen(function() {
-    assert.notEqual($('img.avatar').attr('src'), '');
+    const $userImage = $('img.avatar');
+    assert.equal($userImage.attr('alt'), userLogin);
+    assert.equal($userImage.attr('src'), userAvatar);
   });
 });

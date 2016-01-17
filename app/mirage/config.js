@@ -77,10 +77,7 @@ export default function() {
 export function testConfig() {
   this.get('/user', function(db, request) {
     if(request.requestHeaders.Authorization === "token TOKEN") {
-      return {
-        'login': 'kpfefferle',
-        'avatar_url': 'https://avatars.githubusercontent.com/u/250934?v=3'
-      };
+      return db.users[0];
     } else {
       return new Mirage.Response(401, {}, {});
     }
