@@ -27,7 +27,7 @@
     "ember-cli-bourbon": "1.2.1",
     "ember-cli-content-security-policy": "0.5.0",
     "ember-cli-dependency-checker": "^1.2.0",
-    "ember-cli-deploy": "git+https://github.com/kpfefferle/ember-cli-deploy.git",
+    "ember-cli-deploy": "0.6.0-beta.1",
     "ember-cli-deploy-aws-pack": "^0.2.1",
     "ember-cli-deprecation-workflow": "0.1.5",
     "ember-cli-dotenv": "1.0.4",
