@@ -14,6 +14,6 @@
     "Faker": "3.0.1"
   },
   "resolutions": {
-    "ember": "2.3.0"
+    "ember": "2.3.1"
   }
 }
