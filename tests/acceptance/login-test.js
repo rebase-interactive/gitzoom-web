@@ -26,8 +26,10 @@ test('visiting / when logged out should redirect to /login', function(assert) {
 });
 
 test('visiting /login when logged in should redirect to /', function(assert) {
+  // jshint undef:false
   assert.expect(1);
 
+  server.create('user', { login: 'kpfefferle', avatar_url: 'https://avatars.githubusercontent.com/u/250934?v=3' });
   authenticateSession(application, {accessToken: 'TOKEN'});
   visit('/login');
 
