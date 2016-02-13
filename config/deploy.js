@@ -3,6 +3,14 @@
 module.exports = function(deployTarget) {
   var ENV = {
     build: {},
+    pipeline: {
+      // This setting runs the ember-cli-deploy activation hooks on every deploy
+      // which is necessary in order to run ember-cli-deploy-cloudfront.
+      // To disable CloudFront invalidation, remove this setting or change it to `false`.
+      // To disable ember-cli-deploy-cloudfront for only a particular environment, add
+      // `ENV.pipeline.activateOnDeploy = false` to an environment conditional below.
+      activateOnDeploy: true
+    },
     s3: {
       accessKeyId: process.env.AWS_KEY,
       secretAccessKey: process.env.AWS_SECRET,
