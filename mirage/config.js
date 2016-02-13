@@ -8,7 +8,7 @@ export default function() {
   this.urlPrefix = 'https://api.github.com';
   this.timing = 400;      // delay for each request, automatically set to 0 during testing
 
-  this.passthrough('/user');
+  this.passthrough();
 
   // These comments are here to help you get started. Feel free to delete them.
 
@@ -33,9 +33,9 @@ export default function() {
 
 /* Config that is only loaded during tests */
 export function testConfig() {
-  this.get('/user', function(db, request) {
+  this.get('/user', function(schema, request) {
     if(request.requestHeaders.Authorization === "token TOKEN") {
-      return db.users[0];
+      return schema.user.find(1).attrs;
     } else {
       return new Mirage.Response(401, {}, {});
     }

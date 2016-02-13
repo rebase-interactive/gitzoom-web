@@ -26,10 +26,9 @@ test('visiting / when logged out should redirect to /login', function(assert) {
 });
 
 test('visiting /login when logged in should redirect to /', function(assert) {
-  // jshint undef:false
   assert.expect(1);
 
-  server.create('user', { login: 'kpfefferle', avatar_url: 'https://avatars.githubusercontent.com/u/250934?v=3' });
+  server.create('user');
   authenticateSession(application, {accessToken: 'TOKEN'});
   visit('/login');
 
@@ -39,18 +38,15 @@ test('visiting /login when logged in should redirect to /', function(assert) {
 });
 
 test('layout should show logged in user avatar', function(assert) {
-  // jshint undef:false
   assert.expect(2);
 
-  const userLogin = 'kpfefferle';
-  const userAvatar = 'https://avatars.githubusercontent.com/u/250934?v=3';
-  server.create('user', { login: userLogin, avatar_url: userAvatar });
+  const user = server.create('user');
   authenticateSession(application, {accessToken: 'TOKEN'});
   visit('/');
 
   andThen(function() {
     const $userImage = $('img.avatar');
-    assert.equal($userImage.attr('alt'), userLogin);
-    assert.equal($userImage.attr('src'), userAvatar);
+    assert.equal($userImage.attr('alt'), user.login);
+    assert.equal($userImage.attr('src'), user.avatar_url);
   });
 });
