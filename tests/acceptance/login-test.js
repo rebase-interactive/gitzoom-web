@@ -47,6 +47,6 @@ test('layout should show logged in user avatar', function(assert) {
   andThen(function() {
     const $userImage = $('img.avatar');
     assert.equal($userImage.attr('alt'), user.login);
-    assert.equal($userImage.attr('src'), user.avatar_url);
+    assert.equal($userImage.attr('src'), user.avatarUrl);
   });
 });
