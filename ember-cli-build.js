@@ -7,8 +7,8 @@ module.exports = function(defaults) {
     dotEnv: {
       clientAllowedKeys: ['GATEKEEPER_HOST'],
       path: {
-        development: '.env',
-        test: '.env',
+        development: '.env.development',
+        test: '.env.development',
         production: '.env.production'
       }
     },
