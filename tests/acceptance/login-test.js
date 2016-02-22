@@ -2,6 +2,8 @@ import Ember from 'ember';
 import { module, test } from 'qunit';
 import startApp from 'gitzoom/tests/helpers/start-app';
 import { authenticateSession } from 'gitzoom/tests/helpers/ember-simple-auth';
+import index from 'gitzoom/tests/pages/index';
+import login from 'gitzoom/tests/pages/login';
 
 let application;
 
@@ -18,7 +20,7 @@ module('Acceptance | login', {
 test('visiting / when logged out should redirect to /login', function(assert) {
   assert.expect(1);
 
-  visit('/');
+  index.visit();
 
   andThen(function() {
     assert.equal(currentURL(), '/login');
@@ -30,7 +32,7 @@ test('visiting /login when logged in should redirect to /', function(assert) {
 
   server.create('user');
   authenticateSession(application, {accessToken: 'TOKEN'});
-  visit('/login');
+  login.visit();
 
   andThen(function() {
     assert.equal(currentURL(), '/');
@@ -42,7 +44,7 @@ test('layout should show logged in user avatar', function(assert) {
 
   const user = server.create('user');
   authenticateSession(application, {accessToken: 'TOKEN'});
-  visit('/');
+  index.visit();
 
   andThen(function() {
     const $userImage = $('img.avatar');
