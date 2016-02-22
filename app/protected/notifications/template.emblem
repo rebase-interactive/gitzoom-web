@@ -9,12 +9,4 @@
   .pages
     .page
       .page-content
-.view.view-main.navbar-through
-  .navbar
-    .navbar-inner
-      .left
-      .center Notification Detail
-      .right
-  .pages
-    .page
-      .page-content
+= outlet

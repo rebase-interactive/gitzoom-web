@@ -1,0 +1,9 @@
+.view.view-main.navbar-through
+  .navbar
+    .navbar-inner
+      .left
+      .center Select a Notification
+      .right
+  .pages
+    .page
+      .page-content

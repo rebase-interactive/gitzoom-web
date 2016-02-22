@@ -8,7 +8,7 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('login');
   this.route('protected', {path: '/'}, function() {
-    this.route('notifications');
+    this.route('notifications', function() {});
   });
 });
 
