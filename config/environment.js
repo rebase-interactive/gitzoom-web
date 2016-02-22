@@ -26,8 +26,8 @@ module.exports = function(environment) {
       'media-src': "'self'"
     },
     'ember-simple-auth': {
-      routeAfterAuthentication: 'protected',
-      routeIfAlreadyAuthenticated: 'protected'
+      routeAfterAuthentication: 'protected.notifications',
+      routeIfAlreadyAuthenticated: 'protected.notifications'
     },
     torii: {
       providers: {

@@ -4,5 +4,8 @@ import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-rout
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
   model() {
     return this.store.findRecord('user', 'me');
+  },
+  afterModel() {
+    this.transitionTo('protected.notifications');
   }
 });

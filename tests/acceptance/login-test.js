@@ -27,7 +27,7 @@ test('visiting / when logged out should redirect to /login', function(assert) {
   });
 });
 
-test('visiting /login when logged in should redirect to /', function(assert) {
+test('visiting /login when logged in should redirect to /notifications', function(assert) {
   assert.expect(1);
 
   server.create('user');
@@ -35,7 +35,7 @@ test('visiting /login when logged in should redirect to /', function(assert) {
   login.visit();
 
   andThen(function() {
-    assert.equal(currentURL(), '/');
+    assert.equal(currentURL(), '/notifications');
   });
 });
 
