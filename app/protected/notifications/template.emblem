@@ -3,7 +3,7 @@
     .navbar-inner
       .left
         a.link{action "signOut"} title="Sign out"
-          img.avatar alt=model.login src=model.avatarUrl
+          img.avatar alt=model.user.login src=model.user.avatarUrl
       .center.sliding Notifications
       .right
   .pages
