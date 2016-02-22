@@ -5,7 +5,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
   model() {
     return this.store.findRecord('user', 'me');
   },
-  afterModel() {
+  redirect() {
     this.transitionTo('protected.notifications');
   }
 });
