@@ -50,4 +50,4 @@ before_script:
   - export PATH=$PWD/travis-phantomjs:$PATH
 
 script:
-  - ember try:one $EMBER_TRY_SCENARIO test
+  - ember try $EMBER_TRY_SCENARIO test --skip-cleanup
