@@ -55,7 +55,7 @@
     "ember-simple-auth": "1.1.0-beta.4",
     "liquid-fire": "0.23.0",
     "liquid-fire-reveal": "0.1.2",
-    "loader.js": "^4.0.1",
+    "loader.js": "^4.0.2",
     "torii": "0.8.0-beta.1"
   }
 }
