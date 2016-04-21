@@ -5,13 +5,12 @@ node_js:
 
 sudo: false
 
-# Chrome
-#addons:
-#  apt:
-#    sources:
-#      - google-chrome
-#    packages:
-#      - google-chrome-stable
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
 
 cache:
   directories:
@@ -28,11 +27,8 @@ matrix:
     - env: EMBER_TRY_SCENARIO=ember-canary
 
 before_install:
-# PhantomJS
-  - export PATH=/usr/local/phantomjs-2.0.0/bin:$PATH
-# Chrome
-#  - "export DISPLAY=:99.0"
-#  - "sh -e /etc/init.d/xvfb start"
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
   - npm config set spin false
   - npm install -g npm@^3
   - npm install -g bower
@@ -40,14 +36,6 @@ before_install:
 install:
   - npm install
   - bower install
-
-# PhantomJS
-# Install PhantomJS 2.0
-before_script:
-  - mkdir travis-phantomjs
-  - wget https://s3.amazonaws.com/travis-phantomjs/phantomjs-2.0.0-ubuntu-12.04.tar.bz2 -O $PWD/travis-phantomjs/phantomjs-2.0.0-ubuntu-12.04.tar.bz2
-  - tar -xvf $PWD/travis-phantomjs/phantomjs-2.0.0-ubuntu-12.04.tar.bz2 -C $PWD/travis-phantomjs
-  - export PATH=$PWD/travis-phantomjs:$PATH
 
 script:
   - ember try $EMBER_TRY_SCENARIO test --skip-cleanup
