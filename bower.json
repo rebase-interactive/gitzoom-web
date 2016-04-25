@@ -9,7 +9,7 @@
     "bourbon": "4.2.7",
     "octicons": "3.5.0",
     "pretender": "~1.1.0",
-    "lodash": "4.11.1",
+    "lodash": "4.11.2",
     "Faker": "~3.0.0",
     "ceibo": "2.0.0"
   }
