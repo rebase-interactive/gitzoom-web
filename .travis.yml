@@ -46,3 +46,4 @@ deploy:
   script: ember deploy production
   on:
     tags: true
+    condition: "$EMBER_TRY_SCENARIO = default"
