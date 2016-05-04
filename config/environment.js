@@ -15,6 +15,7 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+      GATEKEEPER_HOST: process.env.GATEKEEPER_HOST
     },
     contentSecurityPolicy: {
       'default-src': "'none'",

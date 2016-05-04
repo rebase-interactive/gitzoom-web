@@ -3,7 +3,7 @@ import ENV from 'gitzoom/config/environment';
 
 export default function() {
 
-  this.passthrough(`https://${ENV.GATEKEEPER_HOST}/**`);
+  this.passthrough(`https://${ENV.APP.GATEKEEPER_HOST}/**`);
 
   this.urlPrefix = 'https://api.github.com';
   this.timing = 400;      // delay for each request, automatically set to 0 during testing
