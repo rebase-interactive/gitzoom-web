@@ -56,6 +56,6 @@
     "liquid-fire": "0.23.1",
     "liquid-fire-reveal": "0.1.2",
     "loader.js": "^4.0.4",
-    "torii": "0.8.0"
+    "torii": "0.8.1-beta.1"
   }
 }
