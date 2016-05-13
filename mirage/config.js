@@ -35,7 +35,7 @@ export default function() {
 export function testConfig() {
   this.get('/user', function(schema, request) {
     if(request.requestHeaders.Authorization === "token TOKEN") {
-      return schema.user.find(1);
+      return schema.users.find(1);
     } else {
       return new Mirage.Response(401, {}, {});
     }
