@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 const {
+  computed: { alias },
   Controller,
   get,
   inject
@@ -8,6 +9,8 @@ const {
 
 export default Controller.extend({
   session: inject.service('session'),
+
+  user: alias('model'),
 
   actions: {
     signOut() {
