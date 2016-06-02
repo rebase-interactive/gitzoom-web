@@ -2,7 +2,9 @@ import Ember from 'ember';
 
 const {
   Controller,
-  inject
+  get,
+  inject,
+  set
 } = Ember;
 
 export default Controller.extend({
@@ -12,10 +14,10 @@ export default Controller.extend({
 
   actions: {
     authenticate() {
-      this.set('isProcessing', true);
-      return this.get('session').authenticate('authenticator:torii', 'github')
+      set('isProcessing', true);
+      return get('session').authenticate('authenticator:torii', 'github')
         .catch(() => {
-          this.set('isProcessing', false);
+          set('isProcessing', false);
         });
     }
   }

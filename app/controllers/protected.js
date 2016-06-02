@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 const {
   Controller,
+  get,
   inject
 } = Ember;
 
@@ -10,7 +11,7 @@ export default Controller.extend({
 
   actions: {
     signOut() {
-      this.get('session').invalidate();
+      get('session').invalidate();
     }
   }
 });
