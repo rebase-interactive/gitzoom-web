@@ -9,6 +9,7 @@ const {
 
 export default GitHubOauth2Provider.extend({
   ajax: inject.service(),
+
   fetch(data) {
     return data;
   },
