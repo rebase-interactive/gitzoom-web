@@ -3,8 +3,12 @@
     <div class="navbar">
       <div class="navbar-inner">
         <div class="left">
-          <a {{action "signOut"}} title="Sign out" class="link">
-            <img alt={{user.login}} src={{user.avatarUrl}} class="avatar">
+          <a class="link"
+             title="Sign out"
+             onclick={{action 'signOut'}}>
+            <img class="avatar"
+              alt={{user.login}}
+              src={{user.avatarUrl}}>
           </a>
         </div>
         <div class="center sliding">

@@ -11,7 +11,8 @@
             <span class="preloader">
             </span>
           {{else}}
-            <a {{action 'authenticate'}} class="item-link list-button">
+            <a class="item-link list-button"
+              onclick={{action 'authenticate'}}>
               <span class="octicon octicon-mark-github">
               </span>
                Sign In
