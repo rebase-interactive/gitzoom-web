@@ -6,7 +6,9 @@ export default ApplicationAdapter.extend({
     return Ember.String.camelize(modelName);
   },
   findRecord(store, type, id, snapshot) {
-    if (id === 'me') { id = null; }
+    if (id === 'me') {
+      id = null;
+    }
     return this._super(store, type, id, snapshot);
   }
 });

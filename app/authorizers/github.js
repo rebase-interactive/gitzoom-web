@@ -5,7 +5,7 @@ const { isEmpty } = Ember;
 
 export default Base.extend({
   authorize(data, block) {
-    const accessToken = data['accessToken'];
+    let { accessToken } = data;
     if (!isEmpty(accessToken)) {
       block('Authorization', `token ${accessToken}`);
     }

@@ -8,11 +8,11 @@ import login from 'gitzoom/tests/pages/login';
 let application;
 
 module('Acceptance | login', {
-  beforeEach: function() {
+  beforeEach() {
     application = startApp();
   },
 
-  afterEach: function() {
+  afterEach() {
     Ember.run(application, 'destroy');
   }
 });
@@ -31,7 +31,7 @@ test('visiting /login when logged in should redirect to /', function(assert) {
   assert.expect(1);
 
   server.create('user');
-  authenticateSession(application, {accessToken: 'TOKEN'});
+  authenticateSession(application, { accessToken: 'TOKEN' });
   login.visit();
 
   andThen(function() {
@@ -42,12 +42,12 @@ test('visiting /login when logged in should redirect to /', function(assert) {
 test('layout should show logged in user avatar', function(assert) {
   assert.expect(2);
 
-  const user = server.create('user');
-  authenticateSession(application, {accessToken: 'TOKEN'});
+  let user = server.create('user');
+  authenticateSession(application, { accessToken: 'TOKEN' });
   index.visit();
 
   andThen(function() {
-    const $userImage = $('img.avatar');
+    let $userImage = $('img.avatar');
     assert.equal($userImage.attr('alt'), user.login);
     assert.equal($userImage.attr('src'), user.avatarUrl);
   });
