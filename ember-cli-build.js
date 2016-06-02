@@ -11,9 +11,6 @@ module.exports = function(defaults) {
         test: '.env.development',
         production: '.env.production'
       }
-    },
-    sassOptions: {
-      includePaths: ['app']
     }
     // Add options here
   });

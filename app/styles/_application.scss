@@ -1,0 +1,25 @@
+a { cursor: pointer; }
+
+body {
+  background: #efeff4;
+}
+
+.ember-view {
+  @include size(100% 100%);
+}
+.view-left {
+  float: left;
+  width: 320px;
+  border-right: 1px solid #b2b2b2;
+}
+.view-main {
+  @include calc(width, "100% - 321px");
+}
+@media (max-width: 768px) {
+  .view-left {
+    width: 240px;
+  }
+  .view-main {
+    @include calc(width, "100% - 241px");
+  }
+}
