@@ -2,8 +2,12 @@ import Ember from 'ember';
 import GitHubOauth2Provider from 'torii/providers/github-oauth2';
 import ENV from 'gitzoom/config/environment';
 
+const {
+  inject
+} = Ember;
+
 export default GitHubOauth2Provider.extend({
-  ajax: Ember.inject.service(),
+  ajax: inject.service(),
   fetch(data) {
     return data;
   },

@@ -1,7 +1,9 @@
-import { Serializer } from 'ember-cli-mirage';
 import Ember from 'ember';
+import Serializer from 'ember-cli-mirage/serializer';
 
-const { underscore } = Ember.String;
+const {
+  String: { underscore }
+} = Ember;
 
 export default Serializer.extend({
   root: false,

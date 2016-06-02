@@ -1,4 +1,4 @@
-import Mirage from 'ember-cli-mirage';
+import Response from 'ember-cli-mirage/response';
 import ENV from 'gitzoom/config/environment';
 
 export default function() {
@@ -37,7 +37,7 @@ export function testConfig() {
     if(request.requestHeaders.Authorization === "token TOKEN") {
       return schema.users.find(1);
     } else {
-      return new Mirage.Response(401, {}, {});
+      return new Response(401, {}, {});
     }
   });
 }

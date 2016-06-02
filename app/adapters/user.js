@@ -1,9 +1,14 @@
-import ApplicationAdapter from './application';
 import Ember from 'ember';
+import ApplicationAdapter from './application';
+
+/*jshint -W079 */
+const {
+  String
+} = Ember;
 
 export default ApplicationAdapter.extend({
   pathForType(modelName) {
-    return Ember.String.camelize(modelName);
+    return String.camelize(modelName);
   },
   findRecord(store, type, id, snapshot) {
     if (id === 'me') {

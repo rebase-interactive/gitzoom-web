@@ -5,6 +5,10 @@ import { authenticateSession } from 'gitzoom/tests/helpers/ember-simple-auth';
 import index from 'gitzoom/tests/pages/index';
 import login from 'gitzoom/tests/pages/login';
 
+const {
+  run
+} = Ember;
+
 let application;
 
 module('Acceptance | login', {
@@ -13,7 +17,7 @@ module('Acceptance | login', {
   },
 
   afterEach() {
-    Ember.run(application, 'destroy');
+    run(application, 'destroy');
   }
 });
 

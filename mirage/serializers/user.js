@@ -1,4 +1,3 @@
 import BaseSerializer from './application';
 
-export default BaseSerializer.extend({
-});
+export default BaseSerializer.extend();

@@ -1,9 +1,10 @@
 import PageObject from 'gitzoom/tests/page-object';
 
-let {
+const {
+  create,
   visitable
 } = PageObject;
 
-export default PageObject.create({
+export default create({
   visit: visitable('/login')
 });
