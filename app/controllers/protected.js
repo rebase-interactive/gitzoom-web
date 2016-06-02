@@ -8,13 +8,13 @@ const {
 } = Ember;
 
 export default Controller.extend({
-  session: inject.service('session'),
+  session: inject.service(),
 
   user: alias('model'),
 
   actions: {
     signOut() {
-      get('session').invalidate();
+      get(this, 'session').invalidate();
     }
   }
 });

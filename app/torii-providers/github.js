@@ -18,7 +18,7 @@ export default GitHubOauth2Provider.extend({
       let authCode = toriiData.authorizationCode;
       let gatekeeperURL =  `https://${ENV.APP.GATEKEEPER_HOST}/authenticate/${authCode}`;
 
-      return get('ajax').request(gatekeeperURL)
+      return get(this, 'ajax').request(gatekeeperURL)
         .then((gatekeeperData) => {
           toriiData.accessToken = gatekeeperData.token;
           return toriiData;

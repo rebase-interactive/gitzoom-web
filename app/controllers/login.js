@@ -14,10 +14,10 @@ export default Controller.extend({
 
   actions: {
     authenticate() {
-      set('isProcessing', true);
-      return get('session').authenticate('authenticator:torii', 'github')
+      set(this, 'isProcessing', true);
+      return get(this, 'session').authenticate('authenticator:torii', 'github')
         .catch(() => {
-          set('isProcessing', false);
+          set(this, 'isProcessing', false);
         });
     }
   }
