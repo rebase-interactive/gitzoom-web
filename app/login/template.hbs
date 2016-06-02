@@ -1,0 +1,24 @@
+<div class="login-screen modal-in">
+  <div class="view">
+    <div class="page">
+      <div class="page-content login-screen-content">
+        <div class="login-screen-title">
+          <span class="octicon octicon-bell">
+          </span>
+        </div>
+        <div class="list-block">
+          {{#if isProcessing}}
+            <span class="preloader">
+            </span>
+          {{else}}
+            <a {{action 'authenticate'}} class="item-link list-button">
+              <span class="octicon octicon-mark-github">
+              </span>
+               Sign In
+            </a>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
