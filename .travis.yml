@@ -1,7 +1,7 @@
 ---
 language: node_js
 node_js:
-  - "4"
+  - "stable"
 
 dist: trusty
 sudo: required
@@ -19,6 +19,7 @@ cache:
 
 env:
   - EMBER_TRY_SCENARIO=default
+  - EMBER_TRY_SCENARIO=ember-release
   - EMBER_TRY_SCENARIO=ember-beta
   - EMBER_TRY_SCENARIO=ember-canary
 
@@ -31,6 +32,7 @@ before_install:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
   - npm config set spin false
+  - npm install -g npm@^3
   - npm install -g bower
 
 install:
