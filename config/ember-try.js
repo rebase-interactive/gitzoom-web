@@ -8,6 +8,17 @@ module.exports = {
       }
     },
     {
+      name: 'ember-release',
+      bower: {
+        dependencies: {
+          'ember': 'components/ember#release'
+        },
+        resolutions: {
+          'ember': 'release'
+        }
+      }
+    },
+    {
       name: 'ember-beta',
       bower: {
         dependencies: {
