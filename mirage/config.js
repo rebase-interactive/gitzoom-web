@@ -34,7 +34,7 @@ export default function() {
 /* Config that is only loaded during tests */
 export function testConfig() {
   this.get('/user', function(schema, request) {
-    if(request.requestHeaders.Authorization === "token TOKEN") {
+    if (request.requestHeaders.Authorization === 'token TOKEN') {
       return schema.users.find(1);
     } else {
       return new Response(401, {}, {});
