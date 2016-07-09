@@ -50,7 +50,7 @@
     "ember-load-initializers": "^0.5.1",
     "ember-resolver": "^2.0.3",
     "ember-simple-auth": "1.1.0",
-    "ember-suave": "3.0.1",
+    "ember-suave": "4.0.0",
     "liquid-fire": "0.23.1",
     "liquid-fire-reveal": "0.1.2",
     "loader.js": "^4.0.10",
