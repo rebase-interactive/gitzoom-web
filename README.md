@@ -1,4 +1,4 @@
-# GitZoom [![Build Status](https://travis-ci.org/rebase-interactive/gitzoom-web.svg?branch=master)](https://travis-ci.org/rebase-interactive/gitzoom-web)
+# GitZoom [![CircleCI](https://circleci.com/gh/rebase-interactive/gitzoom-web.svg?style=svg)](https://circleci.com/gh/rebase-interactive/gitzoom-web)
 
 
 This README outlines the details of collaborating on this Ember application.
