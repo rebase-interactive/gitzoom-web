@@ -51,7 +51,7 @@
     "ember-octicons": "0.7.0",
     "ember-resolver": "^2.1.0",
     "ember-simple-auth": "1.1.0",
-    "ember-suave": "4.0.0",
+    "ember-suave": "4.0.1",
     "liquid-fire": "0.26.1",
     "liquid-fire-reveal": "0.1.2",
     "loader.js": "^4.0.11",
