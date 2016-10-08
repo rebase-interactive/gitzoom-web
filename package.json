@@ -1,6 +1,6 @@
 {
   "name": "gitzoom",
-  "version": "0.4.55",
+  "version": "0.4.56",
   "description": "Experimental Ember.js application for triaging GitHub notifications",
   "private": true,
   "directories": {
