@@ -3,8 +3,11 @@ machine:
     version: "stable"
 dependencies:
   pre:
+    - npm install -g yarnpkg
     - npm install -g bower
     - sudo apt-get update; sudo apt-get install -y --only-upgrade google-chrome-stable
+  override:
+    - yarn
   post:
     - bower install
 deployment:
@@ -12,4 +15,5 @@ deployment:
     tag: /v[0-9]+\.[0-9]+\.[0-9]+/
     owner: rebase-interactive
     commands:
+      - npm install -g ember-cli
       - ember deploy production
