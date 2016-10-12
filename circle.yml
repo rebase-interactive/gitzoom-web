@@ -9,6 +9,7 @@ dependencies:
   override:
     - yarn install
   post:
+    - npm rebuild node-sass
     - bower install
 deployment:
   production:
