@@ -1,7 +1,7 @@
 {
   "name": "gitzoom",
   "dependencies": {
-    "ember": "~2.8.2",
+    "ember": "~2.9.0",
     "ember-cli-shims": "0.1.1",
     "framework7": "1.4.0",
     "bourbon": "4.2.7",
