@@ -3521,9 +3521,9 @@ liquid-fire-reveal@0.1.2:
   dependencies:
     ember-cli-babel "^5.1.5"
 
-liquid-fire@0.26.1:
-  version "0.26.1"
-  resolved "https://registry.yarnpkg.com/liquid-fire/-/liquid-fire-0.26.1.tgz#5b21055044f836e1d43de7c65385f21aaf65ee58"
+liquid-fire@0.26.2:
+  version "0.26.2"
+  resolved "https://registry.yarnpkg.com/liquid-fire/-/liquid-fire-0.26.2.tgz#85c2f68675ad3923f4e128ff7a627ec984e073b8"
   dependencies:
     broccoli-funnel "^1.0.1"
     broccoli-merge-trees "^1.0.0"
