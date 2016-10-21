@@ -17,14 +17,14 @@
     "url": "https://github.com/rebase-interactive/gitzoom-web"
   },
   "engines": {
-    "node": ">= 0.10.0"
+    "node": ">= 0.12.0"
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.5.0",
     "ember-ajax": "^2.5.2",
-    "ember-cli": "2.8.0",
+    "ember-cli": "2.9.0",
     "ember-cli-app-version": "^2.0.0",
     "ember-cli-babel": "^5.1.10",
     "ember-cli-bourbon": "1.2.2",
