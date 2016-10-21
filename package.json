@@ -17,7 +17,7 @@
     "url": "https://github.com/rebase-interactive/gitzoom-web"
   },
   "engines": {
-    "node": ">= 0.10.0"
+    "node": ">= 0.12.0"
   },
   "author": "",
   "license": "MIT",
