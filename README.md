@@ -7,11 +7,11 @@ This README outlines the details of collaborating on this Ember application.
 
 You will need the following things properly installed on your computer.
 
-* [Git](http://git-scm.com/)
-* [Node.js](http://nodejs.org/) (with NPM)
+* [Git](https://git-scm.com/)
+* [Node.js](https://nodejs.org/) (with NPM)
 * [Yarn](https://yarnpkg.com/)
-* [Bower](http://bower.io/)
-* [Ember CLI](http://ember-cli.com/)
+* [Bower](https://bower.io/)
+* [Ember CLI](https://ember-cli.com/)
 
 ## Installation
 
@@ -58,7 +58,7 @@ ember deploy production
 ## Further Reading / Useful Links
 
 * [ember.js](http://emberjs.com/)
-* [ember-cli](http://ember-cli.com/)
+* [ember-cli](https://ember-cli.com/)
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
