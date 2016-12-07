@@ -1158,6 +1158,10 @@ clone@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/clone/-/clone-1.0.2.tgz#260b7a99ebb1edfe247538175f783243cb19d149"
 
+clone@^2.0.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/clone/-/clone-2.1.0.tgz#9c715bfbd39aa197c8ee0f8e65c3912ba34f8cd6"
+
 cmd-shim@~2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/cmd-shim/-/cmd-shim-2.0.2.tgz#6fcbda99483a8fd15d7d30a196ca69d688a2efdb"
@@ -1594,6 +1598,16 @@ ember-cli-babel@5.1.10, ember-cli-babel@^5.0.0, ember-cli-babel@^5.1.10, ember-c
     broccoli-babel-transpiler "^5.6.0"
     broccoli-funnel "^1.0.0"
     clone "^1.0.2"
+    ember-cli-version-checker "^1.0.2"
+    resolve "^1.1.2"
+
+ember-cli-babel@^5.2.1:
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/ember-cli-babel/-/ember-cli-babel-5.2.1.tgz#14a1a7b3ae9e9f1284f7bcdb142eb53bd0b1b5bd"
+  dependencies:
+    broccoli-babel-transpiler "^5.6.0"
+    broccoli-funnel "^1.0.0"
+    clone "^2.0.0"
     ember-cli-version-checker "^1.0.2"
     resolve "^1.1.2"
 
