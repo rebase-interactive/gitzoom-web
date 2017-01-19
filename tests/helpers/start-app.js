@@ -3,15 +3,15 @@ import Application from '../../app';
 import config from '../../config/environment';
 
 const {
-  assign,
+  merge,
   run
 } = Ember;
 
 export default function startApp(attrs) {
   let application;
 
-  // use defaults, but you can override
-  let attributes = assign({}, config.APP, attrs);
+  let attributes = merge({}, config.APP);
+  attributes = merge(attributes, attrs); // use defaults, but you can override;
 
   run(() => {
     application = Application.create(attributes);

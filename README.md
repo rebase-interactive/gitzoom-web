@@ -65,4 +65,4 @@ ember deploy production
 
 ## Copyright
 
-Copyright &copy; 2016 Kevin Pfefferle. All rights reserved.  
+Copyright &copy; 2016-2017 Kevin Pfefferle. All rights reserved.  
