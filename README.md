@@ -17,7 +17,7 @@ You will need the following things properly installed on your computer.
 
 * `git clone <repository-url>` this repository
 * `cd gitzoom`
-* `yarn`
+* `yarn install`
 * `bower install`
 
 ## Running / Development
