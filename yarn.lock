@@ -2185,9 +2185,9 @@ ember-simple-auth@1.2.0:
     ember-network "^0.3.0"
     silent-error "^1.0.0"
 
-ember-source@~2.11.0:
-  version "2.11.0"
-  resolved "https://registry.yarnpkg.com/ember-source/-/ember-source-2.11.0.tgz#fada3652feaaa5ed1fffd40c9ec68ca995801d73"
+ember-source@~2.11.1:
+  version "2.11.1"
+  resolved "https://registry.yarnpkg.com/ember-source/-/ember-source-2.11.1.tgz#8e19a38497670e8500f7e631d215bd2784ffe4b5"
   dependencies:
     broccoli-stew "^1.2.0"
     ember-cli-get-component-path-option "^1.0.0"
