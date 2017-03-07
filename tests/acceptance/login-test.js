@@ -17,6 +17,7 @@ module('Acceptance | login', {
   },
 
   afterEach() {
+    server.shutdown();
     run(application, 'destroy');
   }
 });
