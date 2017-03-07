@@ -31,10 +31,6 @@ module.exports = function(environment) {
       'style-src': "'self'",
       'media-src': "'self'"
     },
-    'ember-simple-auth': {
-      routeAfterAuthentication: 'protected',
-      routeIfAlreadyAuthenticated: 'protected'
-    },
     torii: {
       providers: {
         'github-oauth2': {

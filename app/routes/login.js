@@ -5,4 +5,7 @@ const {
   Route
 } = Ember;
 
-export default Route.extend(UnauthenticatedRouteMixin);
+export default Route.extend(UnauthenticatedRouteMixin, {
+  routeAfterAuthentication: 'protected',
+  routeIfAlreadyAuthenticated: 'protected'
+});
