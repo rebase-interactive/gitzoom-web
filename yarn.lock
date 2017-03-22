@@ -1654,7 +1654,7 @@ ember-cli-dotenv@1.2.0:
     dotenv "^1.0.0"
     exists-sync "0.0.3"
 
-ember-cli-eslint@3.0.2:
+ember-cli-eslint@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/ember-cli-eslint/-/ember-cli-eslint-3.0.2.tgz#21657a50f8e2446ba36dadf595a9028f7fb18ca5"
   dependencies:
@@ -1729,9 +1729,9 @@ ember-cli-lodash-subset@^1.0.11, ember-cli-lodash-subset@^1.0.7:
   version "1.0.12"
   resolved "https://registry.yarnpkg.com/ember-cli-lodash-subset/-/ember-cli-lodash-subset-1.0.12.tgz#af2e77eba5dcb0d77f3308d3a6fd7d3450f6e537"
 
-ember-cli-mirage@0.2.8:
-  version "0.2.8"
-  resolved "https://registry.yarnpkg.com/ember-cli-mirage/-/ember-cli-mirage-0.2.8.tgz#878ece5b6fc07c195a0b8edb8e1785a65d346acf"
+ember-cli-mirage@0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/ember-cli-mirage/-/ember-cli-mirage-0.3.0.tgz#4c6b5a163c240bca5632a4e6d68abc8382068772"
   dependencies:
     broccoli-funnel "^1.0.2"
     broccoli-merge-trees "^1.1.0"
