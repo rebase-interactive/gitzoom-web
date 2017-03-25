@@ -644,7 +644,7 @@ broccoli-config-replace@^1.1.2:
     debug "^2.2.0"
     fs-extra "^0.24.0"
 
-broccoli-file-creator@^1.0.0:
+broccoli-file-creator@^1.0.0, broccoli-file-creator@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/broccoli-file-creator/-/broccoli-file-creator-1.1.1.tgz#1b35b67d215abdfadd8d49eeb69493c39e6c3450"
   dependencies:
@@ -1668,10 +1668,6 @@ ember-cli-htmlbars@^1.0.0, ember-cli-htmlbars@^1.1.1:
     json-stable-stringify "^1.0.0"
     strip-bom "^2.0.0"
 
-ember-cli-import-polyfill@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/ember-cli-import-polyfill/-/ember-cli-import-polyfill-0.2.0.tgz#c1a08a8affb45c97b675926272fe78cf4ca166f2"
-
 ember-cli-inject-live-reload@^1.6.1:
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/ember-cli-inject-live-reload/-/ember-cli-inject-live-reload-1.6.1.tgz#82b8f5be454815a75e7f6d42c9ce0bc883a914a3"
@@ -1951,11 +1947,11 @@ ember-cli@2.12.1:
     walk-sync "^0.3.0"
     yam "0.0.22"
 
-ember-cookies@^0.0.11:
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/ember-cookies/-/ember-cookies-0.0.11.tgz#6f6a070255e943d26fa5f332921a2bbca04d5a07"
+ember-cookies@^0.0.12:
+  version "0.0.12"
+  resolved "https://registry.yarnpkg.com/ember-cookies/-/ember-cookies-0.0.12.tgz#aba3a4a2c36f856e0bba35a4ecf6a58f8950eb9c"
   dependencies:
-    ember-cli-babel "^5.1.6"
+    ember-cli-babel "^5.1.7"
     ember-getowner-polyfill "~1.1.1"
 
 ember-data@^2.12.0:
@@ -2093,14 +2089,14 @@ ember-runtime-enumerable-includes-polyfill@^1.0.0:
     ember-cli-babel "^5.1.6"
     ember-cli-version-checker "^1.1.6"
 
-ember-simple-auth@1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/ember-simple-auth/-/ember-simple-auth-1.2.0.tgz#6275c1580ab17aad303d51723515f3b933fb4635"
+ember-simple-auth@1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/ember-simple-auth/-/ember-simple-auth-1.2.1.tgz#6b7af9943ef2d38d6805dec9f8f60f4901884357"
   dependencies:
+    broccoli-file-creator "^1.1.1"
     ember-cli-babel "^5.1.7"
-    ember-cli-import-polyfill "^0.2.0"
     ember-cli-is-package-missing "^1.0.0"
-    ember-cookies "^0.0.11"
+    ember-cookies "^0.0.12"
     ember-getowner-polyfill "^1.1.0"
     ember-network "^0.3.0"
     silent-error "^1.0.0"
