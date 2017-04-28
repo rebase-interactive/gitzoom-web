@@ -13,13 +13,13 @@ body {
   border-right: 1px solid #b2b2b2;
 }
 .view-main {
-  @include calc(width, "100% - 321px");
+  width: calc("100% - 321px");
 }
 @media (max-width: 768px) {
   .view-left {
     width: 240px;
   }
   .view-main {
-    @include calc(width, "100% - 241px");
+    width: calc("100% - 241px");
   }
 }
