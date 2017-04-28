@@ -7,6 +7,6 @@ const {
 
 export default Route.extend(AuthenticatedRouteMixin, {
   model() {
-    return this.store.findRecord('user', 'me');
+    return this.store.queryRecord('user', {});
   }
 });
