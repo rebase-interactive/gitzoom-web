@@ -7032,9 +7032,9 @@ to-fast-properties@^1.0.0, to-fast-properties@^1.0.1:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/to-fast-properties/-/to-fast-properties-1.0.3.tgz#b83571fa4d8c25b82e231b06e3a3055de4ca1a47"
 
-torii@0.8.4:
-  version "0.8.4"
-  resolved "https://registry.yarnpkg.com/torii/-/torii-0.8.4.tgz#12ba0b51af0594ad6f0f16294c71fe13c82c7686"
+torii@0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/torii/-/torii-0.9.0.tgz#09715f347356b988e77054845df2177ab84e41dd"
   dependencies:
     broccoli-funnel "^1.0.1"
     broccoli-merge-trees "^1.1.1"
