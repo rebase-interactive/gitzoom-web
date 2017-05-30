@@ -2520,9 +2520,9 @@ ember-cli-lodash-subset@^1.0.11, ember-cli-lodash-subset@^1.0.7:
   version "1.0.12"
   resolved "https://registry.yarnpkg.com/ember-cli-lodash-subset/-/ember-cli-lodash-subset-1.0.12.tgz#af2e77eba5dcb0d77f3308d3a6fd7d3450f6e537"
 
-ember-cli-mirage@0.3.1:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/ember-cli-mirage/-/ember-cli-mirage-0.3.1.tgz#2541d624f4994fae3188fcd76a768e8eaff71c4b"
+ember-cli-mirage@0.3.2:
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/ember-cli-mirage/-/ember-cli-mirage-0.3.2.tgz#db672dfcd44258041f18f5e9ddd4dc0b60861c3c"
   dependencies:
     broccoli-funnel "^1.0.2"
     broccoli-merge-trees "^1.1.0"
@@ -2530,8 +2530,9 @@ ember-cli-mirage@0.3.1:
     chalk "^1.1.1"
     ember-cli-babel "^5.1.7"
     ember-cli-node-assets "^0.1.4"
-    ember-inflector "^1.9.2"
-    ember-lodash "^4.0"
+    ember-get-config "0.2.1"
+    ember-inflector "^2.0.0"
+    ember-lodash "^4.17.3"
     exists-sync "0.0.3"
     fake-xml-http-request "^1.4.0"
     faker "^3.0.0"
@@ -2839,6 +2840,13 @@ ember-fetch@^1.4.2:
     node-fetch "^2.0.0-alpha.3"
     whatwg-fetch "^2.0.3"
 
+ember-get-config@0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/ember-get-config/-/ember-get-config-0.2.1.tgz#a1325cceefcb4534c78fc6ccb2be87a3feda6817"
+  dependencies:
+    broccoli-file-creator "^1.1.1"
+    ember-cli-babel "^5.1.6"
+
 ember-getowner-polyfill@^1.1.0, ember-getowner-polyfill@^1.1.1, ember-getowner-polyfill@^1.2.2:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/ember-getowner-polyfill/-/ember-getowner-polyfill-1.2.3.tgz#ea70f4a48b1c05b91056371d1878bbafe018222e"
@@ -2854,12 +2862,6 @@ ember-hash-helper-polyfill@^0.1.2:
     ember-cli-babel "^5.1.7"
     ember-cli-version-checker "^1.2.0"
 
-ember-inflector@^1.9.2:
-  version "1.12.1"
-  resolved "https://registry.yarnpkg.com/ember-inflector/-/ember-inflector-1.12.1.tgz#d8bd2ca2f327b439720f89923fe614d46b5da1ca"
-  dependencies:
-    ember-cli-babel "^5.1.7"
-
 ember-inflector@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ember-inflector/-/ember-inflector-2.0.0.tgz#ac0870e87c0724bd42cf5ed7ef166c49a296ecfb"
@@ -2872,7 +2874,7 @@ ember-load-initializers@^1.0.0:
   dependencies:
     ember-cli-babel "^6.0.0-beta.7"
 
-ember-lodash@^4.0:
+ember-lodash@^4.17.3:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/ember-lodash/-/ember-lodash-4.17.4.tgz#62a76e322e140281c31406b6dd5a11cf318c452d"
   dependencies:
