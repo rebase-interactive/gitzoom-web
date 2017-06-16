@@ -53,7 +53,7 @@
     "eslint-plugin-ember-suave": "^1.0.0",
     "liquid-fire": "0.27.3",
     "liquid-fire-reveal": "0.1.2",
-    "loader.js": "^4.4.1",
+    "loader.js": "^4.5.0",
     "torii": "0.9.5"
   },
   "engines": {
