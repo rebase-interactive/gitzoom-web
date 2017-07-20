@@ -31,7 +31,7 @@
     "ember-cli-deploy-aws-pack": "^1.0.0",
     "ember-cli-deprecation-workflow": "0.2.3",
     "ember-cli-dotenv": "1.2.0",
-    "ember-cli-eslint": "^4.1.0",
+    "ember-cli-eslint": "^4.2.0",
     "ember-cli-htmlbars": "^2.0.2",
     "ember-cli-htmlbars-inline-precompile": "^0.4.3",
     "ember-cli-inject-live-reload": "^1.7.0",
