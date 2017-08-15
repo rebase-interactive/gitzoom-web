@@ -51,7 +51,7 @@
     "ember-simple-auth": "1.4.0",
     "ember-source": "~2.14.1",
     "eslint-plugin-ember-suave": "^1.0.0",
-    "liquid-fire": "0.27.3",
+    "liquid-fire": "0.28.0",
     "liquid-fire-reveal": "0.1.2",
     "loader.js": "^4.6.0",
     "torii": "0.9.6"
