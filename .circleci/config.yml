@@ -1,19 +1,36 @@
 version: 2
 jobs:
-  build:
+  checkout_code:
     docker:
-      - image: circleci/node:6-browsers
+      - image: circleci/node:6
     working_directory: ~/gitzoom-web
     steps:
       - checkout
-      - run: echo 'export PATH=~/gitzoom-web/node_modules/.bin:$PATH' >> $BASH_ENV
       - run:
-          name: Install Bower
-          command: sudo npm install -g bower
+          name: Save SHA to File
+          command: echo $CIRCLE_SHA1 > .circle-sha
+      - save_cache:
+          key: v1-repo-{{ checksum ".circle-sha" }}
+          paths:
+            - ~/gitzoom-web
+
+  install_dependencies:
+    docker:
+      - image: circleci/node:6
+    working_directory: ~/gitzoom-web
+    steps:
+      - run:
+          name: Save SHA to File
+          command: echo $CIRCLE_SHA1 > .circle-sha
+      - restore_cache:
+          key: v1-repo-{{ checksum ".circle-sha" }}
       - restore_cache:
           key: v1-node-modules-{{ checksum "yarn.lock" }}
       - restore_cache:
           key: v1-bower-components-{{ checksum "bower.json" }}
+      - run:
+          name: Install Bower
+          command: sudo npm install -g bower
       - run:
           name: Yarn Install
           command: yarn install --non-interactive
@@ -28,12 +45,59 @@ jobs:
           key: v1-bower-components-{{ checksum "bower.json" }}
           paths:
             - ~/gitzoom-web/bower_components
+
+  run_tests:
+    docker:
+      - image: circleci/node:6-browsers
+    working_directory: ~/gitzoom-web
+    steps:
+      - run:
+          name: Save SHA to File
+          command: echo $CIRCLE_SHA1 > .circle-sha
+      - restore_cache:
+          key: v1-repo-{{ checksum ".circle-sha" }}
+      - restore_cache:
+          key: v1-node-modules-{{ checksum "yarn.lock" }}
+      - restore_cache:
+          key: v1-bower-components-{{ checksum "bower.json" }}
+      - run: echo 'export PATH=~/gitzoom-web/node_modules/.bin:$PATH' >> $BASH_ENV
       - run:
           name: Run Tests
-          command: yarn test
+          command: JOBS=2 yarn test
+
+  deploy_production:
+    docker:
+      - image: circleci/node:6
+    working_directory: ~/gitzoom-web
+    steps:
       - run:
-          name: Deploy
-          command: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              ember deploy production
-            fi
+          name: Save SHA to File
+          command: echo $CIRCLE_SHA1 > .circle-sha
+      - restore_cache:
+          key: v1-repo-{{ checksum ".circle-sha" }}
+      - restore_cache:
+          key: v1-node-modules-{{ checksum "yarn.lock" }}
+      - restore_cache:
+          key: v1-bower-components-{{ checksum "bower.json" }}
+      - run: echo 'export PATH=~/gitzoom-web/node_modules/.bin:$PATH' >> $BASH_ENV
+      - run:
+          name: Deploy Production
+          command: ember deploy production
+
+workflows:
+  version: 2
+  test-and-deploy:
+    jobs:
+      - checkout_code
+      - install_dependencies:
+          requires:
+            - checkout_code
+      - run_tests:
+          requires:
+            - install_dependencies
+      - deploy_production:
+          requires:
+            - run_tests
+          filters:
+            branches:
+              only: master
