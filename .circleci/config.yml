@@ -10,12 +10,24 @@ jobs:
       - run:
           name: Install Bower
           command: sudo npm install -g bower
+      - restore_cache:
+          key: v1-node-modules-{{ checksum "yarn.lock" }}
+      - restore_cache:
+          key: v1-bower-components-{{ checksum "bower.json" }}
       - run:
           name: Yarn Install
           command: yarn install --non-interactive
       - run:
           name: Bower Install
           command: bower install
+      - save_cache:
+          key: v1-node-modules-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/gitzoom-web/node_modules
+      - save_cache:
+          key: v1-bower-components-{{ checksum "bower.json" }}
+          paths:
+            - ~/gitzoom-web/bower_components
       - run:
           name: Run Tests
           command: yarn test
