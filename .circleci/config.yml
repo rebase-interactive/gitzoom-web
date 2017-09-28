@@ -22,6 +22,6 @@ jobs:
       - run:
           name: Deploy
           command: |
-            if [[ "${CIRCLE_TAG}" =~ /v[0-9]+\.[0-9]+\.[0-9]+/ ]]; then
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
               ember deploy production
             fi
