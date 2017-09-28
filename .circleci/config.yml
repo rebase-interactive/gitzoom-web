@@ -1,9 +1,12 @@
+defaults: &defaults
+  docker:
+    - image: circleci/node:6-browsers
+  working_directory: ~/gitzoom-web
+
 version: 2
 jobs:
   checkout_code:
-    docker:
-      - image: circleci/node:6
-    working_directory: ~/gitzoom-web
+    <<: *defaults
     steps:
       - checkout
       - run:
@@ -15,9 +18,7 @@ jobs:
             - ~/gitzoom-web
 
   install_dependencies:
-    docker:
-      - image: circleci/node:6
-    working_directory: ~/gitzoom-web
+    <<: *defaults
     steps:
       - run:
           name: Save SHA to File
@@ -47,9 +48,7 @@ jobs:
             - ~/gitzoom-web/bower_components
 
   run_tests:
-    docker:
-      - image: circleci/node:6-browsers
-    working_directory: ~/gitzoom-web
+    <<: *defaults
     steps:
       - run:
           name: Save SHA to File
@@ -66,9 +65,7 @@ jobs:
           command: JOBS=2 yarn test
 
   deploy_production:
-    docker:
-      - image: circleci/node:6
-    working_directory: ~/gitzoom-web
+    <<: *defaults
     steps:
       - run:
           name: Save SHA to File
