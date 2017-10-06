@@ -7,6 +7,13 @@ save_sha: &save_sha
   name: Save SHA to File
   command: echo $CIRCLE_SHA1 > .circle-sha
 
+repo_key: &repo_key
+  key: v1-repo-{{ checksum ".circle-sha" }}
+npm_key: &npm_key
+  key: v1-node-modules-{{ checksum "yarn.lock" }}
+bower_key: &bower_key
+  key: v1-bower-components-{{ checksum "bower.json" }}
+
 version: 2
 jobs:
   checkout_code:
@@ -16,7 +23,7 @@ jobs:
       - run:
           <<: *save_sha
       - save_cache:
-          key: v1-repo-{{ checksum ".circle-sha" }}
+          <<: *repo_key
           paths:
             - ~/gitzoom-web
 
@@ -26,11 +33,11 @@ jobs:
       - run:
           <<: *save_sha
       - restore_cache:
-          key: v1-repo-{{ checksum ".circle-sha" }}
+          <<: *repo_key
       - restore_cache:
-          key: v1-node-modules-{{ checksum "yarn.lock" }}
+          <<: *npm_key
       - restore_cache:
-          key: v1-bower-components-{{ checksum "bower.json" }}
+          <<: *bower_key
       - run:
           name: Install Bower
           command: sudo npm install -g bower
@@ -41,11 +48,11 @@ jobs:
           name: Bower Install
           command: bower install
       - save_cache:
-          key: v1-node-modules-{{ checksum "yarn.lock" }}
+          <<: *npm_key
           paths:
             - ~/gitzoom-web/node_modules
       - save_cache:
-          key: v1-bower-components-{{ checksum "bower.json" }}
+          <<: *bower_key
           paths:
             - ~/gitzoom-web/bower_components
 
@@ -55,11 +62,11 @@ jobs:
       - run:
           <<: *save_sha
       - restore_cache:
-          key: v1-repo-{{ checksum ".circle-sha" }}
+          <<: *repo_key
       - restore_cache:
-          key: v1-node-modules-{{ checksum "yarn.lock" }}
+          <<: *npm_key
       - restore_cache:
-          key: v1-bower-components-{{ checksum "bower.json" }}
+          <<: *bower_key
       - run: echo 'export PATH=~/gitzoom-web/node_modules/.bin:$PATH' >> $BASH_ENV
       - run:
           name: Run Tests
@@ -71,11 +78,11 @@ jobs:
       - run:
           <<: *save_sha
       - restore_cache:
-          key: v1-repo-{{ checksum ".circle-sha" }}
+          <<: *repo_key
       - restore_cache:
-          key: v1-node-modules-{{ checksum "yarn.lock" }}
+          <<: *npm_key
       - restore_cache:
-          key: v1-bower-components-{{ checksum "bower.json" }}
+          <<: *bower_key
       - run: echo 'export PATH=~/gitzoom-web/node_modules/.bin:$PATH' >> $BASH_ENV
       - run:
           name: Deploy Production
