@@ -3,6 +3,10 @@ defaults: &defaults
     - image: circleci/node:6-browsers
   working_directory: ~/gitzoom-web
 
+save_sha: &save_sha
+  name: Save SHA to File
+  command: echo $CIRCLE_SHA1 > .circle-sha
+
 version: 2
 jobs:
   checkout_code:
@@ -10,8 +14,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Save SHA to File
-          command: echo $CIRCLE_SHA1 > .circle-sha
+          <<: *save_sha
       - save_cache:
           key: v1-repo-{{ checksum ".circle-sha" }}
           paths:
@@ -21,8 +24,7 @@ jobs:
     <<: *defaults
     steps:
       - run:
-          name: Save SHA to File
-          command: echo $CIRCLE_SHA1 > .circle-sha
+          <<: *save_sha
       - restore_cache:
           key: v1-repo-{{ checksum ".circle-sha" }}
       - restore_cache:
@@ -51,8 +53,7 @@ jobs:
     <<: *defaults
     steps:
       - run:
-          name: Save SHA to File
-          command: echo $CIRCLE_SHA1 > .circle-sha
+          <<: *save_sha
       - restore_cache:
           key: v1-repo-{{ checksum ".circle-sha" }}
       - restore_cache:
@@ -68,8 +69,7 @@ jobs:
     <<: *defaults
     steps:
       - run:
-          name: Save SHA to File
-          command: echo $CIRCLE_SHA1 > .circle-sha
+          <<: *save_sha
       - restore_cache:
           key: v1-repo-{{ checksum ".circle-sha" }}
       - restore_cache:
