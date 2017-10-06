@@ -3,16 +3,19 @@ defaults: &defaults
     - image: circleci/node:6-browsers
   working_directory: ~/gitzoom-web
 
-save_sha: &save_sha
-  name: Save SHA to File
-  command: echo $CIRCLE_SHA1 > .circle-sha
-
 repo_key: &repo_key
   key: v1-repo-{{ checksum ".circle-sha" }}
 npm_key: &npm_key
   key: v1-node-modules-{{ checksum "yarn.lock" }}
 bower_key: &bower_key
   key: v1-bower-components-{{ checksum "bower.json" }}
+
+save_sha: &save_sha
+  name: Save SHA to File
+  command: echo $CIRCLE_SHA1 > .circle-sha
+add_npm_path: &add_npm_path
+  name: Add NPM bin to PATH
+  command: echo 'export PATH=~/gitzoom-web/node_modules/.bin:$PATH' >> $BASH_ENV
 
 version: 2
 jobs:
@@ -67,7 +70,8 @@ jobs:
           <<: *npm_key
       - restore_cache:
           <<: *bower_key
-      - run: echo 'export PATH=~/gitzoom-web/node_modules/.bin:$PATH' >> $BASH_ENV
+      - run:
+          <<: *add_npm_path
       - run:
           name: Run Tests
           command: JOBS=2 yarn test
@@ -83,7 +87,8 @@ jobs:
           <<: *npm_key
       - restore_cache:
           <<: *bower_key
-      - run: echo 'export PATH=~/gitzoom-web/node_modules/.bin:$PATH' >> $BASH_ENV
+      - run:
+          <<: *add_npm_path
       - run:
           name: Deploy Production
           command: ember deploy production
