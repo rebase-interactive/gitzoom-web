@@ -50,7 +50,7 @@
     "ember-octicons": "0.7.1",
     "ember-resolver": "^4.5.0",
     "ember-simple-auth": "1.4.0",
-    "ember-source": "~2.15.3",
+    "ember-source": "~2.16.0",
     "eslint-plugin-ember-suave": "^1.0.0",
     "liquid-fire": "0.28.0",
     "liquid-fire-reveal": "0.1.2",
