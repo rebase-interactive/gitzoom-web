@@ -1,18 +1,14 @@
-import Ember from 'ember';
+import EmberRouter from '@ember/routing/router';
 import config from './config/environment';
 
-const {
-  Router
-} = Ember;
-
-const AppRouter = Router.extend({
+const Router = EmberRouter.extend({
   location: config.locationType,
   rootURL: config.rootURL
 });
 
-AppRouter.map(function() {
+Router.map(function() {
   this.route('login');
   this.route('protected', { path: '/' });
 });
 
-export default AppRouter;
+export default Router;

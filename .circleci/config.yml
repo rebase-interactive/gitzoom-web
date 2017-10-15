@@ -1,6 +1,8 @@
 defaults: &defaults
   docker:
     - image: circleci/node:6-browsers
+      environment:
+        JOBS: 2
   working_directory: ~/gitzoom-web
 
 repo_key: &repo_key
@@ -74,7 +76,7 @@ jobs:
           <<: *add_npm_path
       - run:
           name: Run Tests
-          command: JOBS=2 yarn test
+          command: yarn test
 
   deploy_production:
     <<: *defaults
