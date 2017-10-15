@@ -3130,9 +3130,9 @@ ember-simple-auth@1.4.0:
     ember-getowner-polyfill "^1.1.0"
     silent-error "^1.0.0"
 
-ember-source@~2.15.2:
-  version "2.15.2"
-  resolved "https://registry.yarnpkg.com/ember-source/-/ember-source-2.15.2.tgz#544c7bcee7b50532e4a10c5572ddf42c835abc93"
+ember-source@~2.15.3:
+  version "2.15.3"
+  resolved "https://registry.yarnpkg.com/ember-source/-/ember-source-2.15.3.tgz#064d358af42774269d45091cc5316df7e36edf9c"
   dependencies:
     "@glimmer/compiler" "^0.25.3"
     "@glimmer/node" "^0.25.3"
