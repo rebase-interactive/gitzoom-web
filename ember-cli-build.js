@@ -5,14 +5,6 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
-    dotEnv: {
-      clientAllowedKeys: ['GATEKEEPER_HOST'],
-      path: {
-        development: '.env.development',
-        test: '.env.development',
-        production: '.env.production'
-      }
-    }
     // Add options here
   });
 
