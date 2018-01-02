@@ -1,13 +1,11 @@
-import Ember from 'ember';
+/* eslint-disable no-undef */
+import { run } from '@ember/runloop';
+
 import { module, test } from 'qunit';
 import startApp from 'gitzoom/tests/helpers/start-app';
 import { authenticateSession } from 'gitzoom/tests/helpers/ember-simple-auth';
 import index from 'gitzoom/tests/pages/index';
 import login from 'gitzoom/tests/pages/login';
-
-const {
-  run
-} = Ember;
 
 let application;
 
@@ -52,7 +50,7 @@ test('layout should show logged in user avatar', function(assert) {
   index.visit();
 
   andThen(function() {
-    let $userImage = $('img.avatar');
+    let $userImage = find('img.avatar');
     assert.equal($userImage.attr('alt'), user.login);
     assert.equal($userImage.attr('src'), user.avatarUrl);
   });
