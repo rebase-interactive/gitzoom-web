@@ -61,6 +61,23 @@ jobs:
           paths:
             - ~/gitzoom-web/bower_components
 
+  lint_js:
+    <<: *defaults
+    steps:
+      - run:
+          <<: *save_sha
+      - restore_cache:
+          <<: *repo_key
+      - restore_cache:
+          <<: *npm_key
+      - restore_cache:
+          <<: *bower_key
+      - run:
+          <<: *add_npm_path
+      - run:
+          name: Lint JS
+          command: yarn run lint:js
+
   run_tests:
     <<: *defaults
     steps:
@@ -109,6 +126,12 @@ workflows:
           filters:
             tags:
               only: /.*/
+      - lint_js:
+          requires:
+            - install_dependencies
+          filters:
+            tags:
+              only: /.*/
       - run_tests:
           requires:
             - install_dependencies
@@ -117,6 +140,7 @@ workflows:
               only: /.*/
       - deploy_production:
           requires:
+            - lint_js
             - run_tests
           filters:
             tags:

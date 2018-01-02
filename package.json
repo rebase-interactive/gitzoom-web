@@ -15,6 +15,7 @@
   },
   "scripts": {
     "build": "ember build",
+    "lint:js": "eslint ./*.js app config lib server tests",
     "start": "ember serve",
     "test": "ember test"
   },
@@ -50,7 +51,8 @@
     "ember-octicons": "0.7.1",
     "ember-resolver": "^4.5.0",
     "ember-simple-auth": "1.4.2",
-    "ember-source": "~2.18.0",
+    "ember-source": "~2.17.0",
+    "eslint-plugin-ember": "^5.0.0",
     "eslint-plugin-ember-suave": "^1.0.0",
     "liquid-fire": "0.29.1",
     "liquid-fire-reveal": "0.1.2",
