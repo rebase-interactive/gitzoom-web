@@ -1,7 +1,6 @@
 {
   "name": "gitzoom",
   "dependencies": {
-    "bourbon": "4.3.4",
     "ceibo": "2.0.0",
     "framework7": "1.6.4",
     "octicons": "4.3.0",
