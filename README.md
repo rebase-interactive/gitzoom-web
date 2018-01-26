@@ -10,7 +10,6 @@ You will need the following things properly installed on your computer.
 * [Git](https://git-scm.com/)
 * [Node.js](https://nodejs.org/)
 * [Yarn](https://yarnpkg.com/)
-* [Bower](https://bower.io/)
 * [Ember CLI](https://ember-cli.com/)
 * [Google Chrome](https://google.com/chrome/)
 
@@ -19,7 +18,6 @@ You will need the following things properly installed on your computer.
 * `git clone <repository-url>` this repository
 * `cd gitzoom`
 * `yarn install`
-* `bower install`
 
 ## Running / Development
 

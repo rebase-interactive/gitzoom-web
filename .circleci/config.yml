@@ -9,8 +9,6 @@ repo_key: &repo_key
   key: v1-repo-{{ checksum ".circle-sha" }}
 npm_key: &npm_key
   key: v1-node-modules-{{ checksum "yarn.lock" }}
-bower_key: &bower_key
-  key: v1-bower-components-{{ checksum "bower.json" }}
 
 save_sha: &save_sha
   name: Save SHA to File
@@ -41,25 +39,13 @@ jobs:
           <<: *repo_key
       - restore_cache:
           <<: *npm_key
-      - restore_cache:
-          <<: *bower_key
-      - run:
-          name: Install Bower
-          command: sudo npm install -g bower
       - run:
           name: Yarn Install
           command: yarn install --non-interactive
-      - run:
-          name: Bower Install
-          command: bower install
       - save_cache:
           <<: *npm_key
           paths:
             - ~/gitzoom-web/node_modules
-      - save_cache:
-          <<: *bower_key
-          paths:
-            - ~/gitzoom-web/bower_components
 
   lint_js:
     <<: *defaults
@@ -70,8 +56,6 @@ jobs:
           <<: *repo_key
       - restore_cache:
           <<: *npm_key
-      - restore_cache:
-          <<: *bower_key
       - run:
           <<: *add_npm_path
       - run:
@@ -87,8 +71,6 @@ jobs:
           <<: *repo_key
       - restore_cache:
           <<: *npm_key
-      - restore_cache:
-          <<: *bower_key
       - run:
           <<: *add_npm_path
       - run:
@@ -104,8 +86,6 @@ jobs:
           <<: *repo_key
       - restore_cache:
           <<: *npm_key
-      - restore_cache:
-          <<: *bower_key
       - run:
           <<: *add_npm_path
       - run:
