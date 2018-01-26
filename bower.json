@@ -2,7 +2,6 @@
   "name": "gitzoom",
   "dependencies": {
     "framework7": "1.6.4",
-    "octicons": "4.3.0",
-    "pretender": "~1.4.1"
+    "octicons": "4.3.0"
   }
 }
