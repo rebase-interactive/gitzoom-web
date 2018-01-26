@@ -1,7 +1,6 @@
 {
   "name": "gitzoom",
   "dependencies": {
-    "Faker": "~3.0.0",
     "bourbon": "4.3.4",
     "ceibo": "2.0.0",
     "framework7": "1.6.4",
