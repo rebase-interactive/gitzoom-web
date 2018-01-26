@@ -1,7 +1,7 @@
 {
   "name": "gitzoom",
   "dependencies": {
-    "framework7": "1.6.4",
+    "framework7": "1.6.5",
     "octicons": "4.3.0"
   }
 }
