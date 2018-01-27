@@ -5,59 +5,44 @@ defaults: &defaults
         JOBS: 2
   working_directory: ~/gitzoom-web
 
-repo_key: &repo_key
-  key: v1-repo-{{ checksum ".circle-sha" }}
-npm_key: &npm_key
-  key: v1-node-modules-{{ checksum "yarn.lock" }}
-
-save_sha: &save_sha
-  name: Save SHA to File
-  command: echo $CIRCLE_SHA1 > .circle-sha
-add_npm_path: &add_npm_path
-  name: Add NPM bin to PATH
-  command: echo 'export PATH=~/gitzoom-web/node_modules/.bin:$PATH' >> $BASH_ENV
-
 version: 2
 jobs:
   checkout_code:
     <<: *defaults
     steps:
       - checkout
-      - run:
-          <<: *save_sha
-      - save_cache:
-          <<: *repo_key
+      - persist_to_workspace:
+          root: .
           paths:
-            - ~/gitzoom-web
+            - .
 
   install_dependencies:
     <<: *defaults
     steps:
-      - run:
-          <<: *save_sha
+      - attach_workspace:
+          at: .
       - restore_cache:
-          <<: *repo_key
-      - restore_cache:
-          <<: *npm_key
+          keys:
+            - v1-deps-{{ .Branch }}-{{ checksum "yarn.lock" }}
+            - v1-deps-{{ .Branch }}-
+            - v1-deps-
       - run:
           name: Yarn Install
           command: yarn install --non-interactive
       - save_cache:
-          <<: *npm_key
+          key: v1-deps-{{ .Branch }}-{{ checksum "yarn.lock" }}
           paths:
-            - ~/gitzoom-web/node_modules
+            - ./node_modules
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
 
   lint_js:
     <<: *defaults
     steps:
-      - run:
-          <<: *save_sha
-      - restore_cache:
-          <<: *repo_key
-      - restore_cache:
-          <<: *npm_key
-      - run:
-          <<: *add_npm_path
+      - attach_workspace:
+          at: .
       - run:
           name: Lint JS
           command: yarn run lint:js
@@ -65,14 +50,9 @@ jobs:
   run_tests:
     <<: *defaults
     steps:
-      - run:
-          <<: *save_sha
-      - restore_cache:
-          <<: *repo_key
-      - restore_cache:
-          <<: *npm_key
-      - run:
-          <<: *add_npm_path
+      - attach_workspace:
+          at: .
+      - run: echo 'export PATH=~/gitzoom-web/node_modules/.bin:$PATH' >> $BASH_ENV
       - run:
           name: Run Tests
           command: yarn test
@@ -80,21 +60,16 @@ jobs:
   deploy_production:
     <<: *defaults
     steps:
+      - attach_workspace:
+          at: .
+      - run: echo 'export PATH=~/gitzoom-web/node_modules/.bin:$PATH' >> $BASH_ENV
       - run:
-          <<: *save_sha
-      - restore_cache:
-          <<: *repo_key
-      - restore_cache:
-          <<: *npm_key
-      - run:
-          <<: *add_npm_path
-      - run:
-          name: Deploy Production
+          name: Deploy
           command: ember deploy production
 
 workflows:
   version: 2
-  test-and-deploy:
+  test_and_deploy:
     jobs:
       - checkout_code:
           filters:
