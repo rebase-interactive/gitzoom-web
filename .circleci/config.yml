@@ -1,129 +1,27 @@
-defaults: &defaults
-  docker:
-    - image: circleci/node:6-browsers
-      environment:
-        JOBS: 2
-  working_directory: ~/gitzoom-web
-
-repo_key: &repo_key
-  key: v1-repo-{{ checksum ".circle-sha" }}
-npm_key: &npm_key
-  key: v1-node-modules-{{ checksum "yarn.lock" }}
-
-save_sha: &save_sha
-  name: Save SHA to File
-  command: echo $CIRCLE_SHA1 > .circle-sha
-add_npm_path: &add_npm_path
-  name: Add NPM bin to PATH
-  command: echo 'export PATH=~/gitzoom-web/node_modules/.bin:$PATH' >> $BASH_ENV
-
+# .circleci/config.yml
 version: 2
 jobs:
-  checkout_code:
-    <<: *defaults
+  build:
+    docker:
+      - image: circleci/node:6-browsers
+        environment:
+          JOBS: 2
+    working_directory: ~/gitzoom-web
     steps:
       - checkout
       - run:
-          <<: *save_sha
-      - save_cache:
-          <<: *repo_key
-          paths:
-            - ~/gitzoom-web
-
-  install_dependencies:
-    <<: *defaults
-    steps:
-      - run:
-          <<: *save_sha
-      - restore_cache:
-          <<: *repo_key
-      - restore_cache:
-          <<: *npm_key
-      - run:
           name: Yarn Install
           command: yarn install --non-interactive
-      - save_cache:
-          <<: *npm_key
-          paths:
-            - ~/gitzoom-web/node_modules
-
-  lint_js:
-    <<: *defaults
-    steps:
+      - run: echo 'export PATH=~/gitzoom-web/node_modules/.bin:$PATH' >> $BASH_ENV
       - run:
-          <<: *save_sha
-      - restore_cache:
-          <<: *repo_key
-      - restore_cache:
-          <<: *npm_key
-      - run:
-          <<: *add_npm_path
-      - run:
-          name: Lint JS
+          name: Run JS Lint
           command: yarn run lint:js
-
-  run_tests:
-    <<: *defaults
-    steps:
-      - run:
-          <<: *save_sha
-      - restore_cache:
-          <<: *repo_key
-      - restore_cache:
-          <<: *npm_key
-      - run:
-          <<: *add_npm_path
       - run:
           name: Run Tests
           command: yarn test
-
-  deploy_production:
-    <<: *defaults
-    steps:
       - run:
-          <<: *save_sha
-      - restore_cache:
-          <<: *repo_key
-      - restore_cache:
-          <<: *npm_key
-      - run:
-          <<: *add_npm_path
-      - run:
-          name: Deploy Production
-          command: ember deploy production
-
-workflows:
-  version: 2
-  test-and-deploy:
-    jobs:
-      - checkout_code:
-          filters:
-            tags:
-              only: /.*/
-      - install_dependencies:
-          requires:
-            - checkout_code
-          filters:
-            tags:
-              only: /.*/
-      - lint_js:
-          requires:
-            - install_dependencies
-          filters:
-            tags:
-              only: /.*/
-      - run_tests:
-          requires:
-            - install_dependencies
-          filters:
-            tags:
-              only: /.*/
-      - deploy_production:
-          requires:
-            - lint_js
-            - run_tests
-          filters:
-            tags:
-              only: /v[0-9]+\.[0-9]+\.[0-9]+/
-            branches:
-              ignore: /.*/
+          name: Deploy
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              ember deploy production
+            fi
