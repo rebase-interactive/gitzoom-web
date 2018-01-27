@@ -62,6 +62,7 @@ jobs:
     steps:
       - attach_workspace:
           at: .
+      - run: echo 'export PATH=~/gitzoom-web/node_modules/.bin:$PATH' >> $BASH_ENV
       - run:
           name: Deploy
           command: ember deploy production
