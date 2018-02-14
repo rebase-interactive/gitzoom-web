@@ -55,7 +55,7 @@
     "eslint-plugin-ember": "^5.0.0",
     "eslint-plugin-ember-suave": "^1.0.0",
     "framework7": "1.6.5",
-    "liquid-fire": "0.29.1",
+    "liquid-fire": "0.29.2",
     "liquid-fire-reveal": "0.1.2",
     "loader.js": "^4.6.0",
     "torii": "0.10.1"
