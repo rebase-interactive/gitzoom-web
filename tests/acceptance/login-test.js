@@ -6,8 +6,6 @@ import setupMirage from 'gitzoom/tests/helpers/ember-cli-mirage';
 
 import { authenticateSession } from 'ember-simple-auth/test-support';
 
-let application;
-
 module('Acceptance | login', function(hooks) {
   setupApplicationTest(hooks);
   setupMirage(hooks);
@@ -24,8 +22,8 @@ module('Acceptance | login', function(hooks) {
     assert.expect(1);
 
     this.server.create('user');
-    authenticateSession(application, { accessToken: 'TOKEN' });
 
+    await authenticateSession({ accessToken: 'TOKEN' });
     await visit('/login');
 
     assert.equal(currentURL(), '/');
@@ -35,8 +33,8 @@ module('Acceptance | login', function(hooks) {
     assert.expect(2);
 
     let user = this.server.create('user');
-    authenticateSession(application, { accessToken: 'TOKEN' });
 
+    await authenticateSession({ accessToken: 'TOKEN' });
     await visit('/');
 
     assert.dom('img.avatar').hasAttribute('alt', user.login);

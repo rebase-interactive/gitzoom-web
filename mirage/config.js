@@ -1,3 +1,4 @@
+import Response from 'ember-cli-mirage/response';
 import ENV from 'gitzoom/config/environment';
 
 export default function() {
@@ -6,10 +7,6 @@ export default function() {
 
   this.urlPrefix = 'https://api.github.com';
   this.timing = 400;      // delay for each request, automatically set to 0 during testing
-
-  this.get('/user', function(schema) {
-    return schema.users.find(1);
-  });
 
   this.passthrough();
 
@@ -32,4 +29,15 @@ export default function() {
     this.put('/posts/:id'); // or this.patch
     this.del('/posts/:id');
   */
+}
+
+/* Config that is only loaded during tests */
+export function testConfig() {
+  this.get('/user', function(schema, request) {
+    if (request.requestHeaders.Authorization === 'token TOKEN') {
+      return schema.users.find(1);
+    } else {
+      return new Response(401, {}, {});
+    }
+  });
 }
