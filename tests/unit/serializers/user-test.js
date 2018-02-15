@@ -1,16 +1,6 @@
-import { moduleForModel } from 'ember-qunit';
-// import { moduleForModel, test } from 'ember-qunit';
+import { module } from 'qunit';
+import { setupTest } from 'ember-qunit';
 
-moduleForModel('user', 'Unit | Serializer | user', {
-  // Specify the other units that are required for this test.
-  needs: ['serializer:user']
+module('Unit | Serializer | user', function(hooks) {
+  setupTest(hooks);
 });
-
-// Replace this with your real tests.
-// test('it serializes records', function(assert) {
-//   let record = this.subject();
-//
-//   let serializedRecord = record.serialize();
-//
-//   assert.ok(serializedRecord);
-// });

@@ -1,57 +1,45 @@
 /* eslint-disable no-undef */
-import { run } from '@ember/runloop';
-
 import { module, test } from 'qunit';
-import startApp from 'gitzoom/tests/helpers/start-app';
-import { authenticateSession } from 'gitzoom/tests/helpers/ember-simple-auth';
-import index from 'gitzoom/tests/pages/index';
-import login from 'gitzoom/tests/pages/login';
+import { visit, currentURL } from '@ember/test-helpers';
+import { setupApplicationTest } from 'ember-qunit';
+import setupMirage from 'gitzoom/tests/helpers/ember-cli-mirage';
+
+import { authenticateSession } from 'ember-simple-auth/test-support';
 
 let application;
 
-module('Acceptance | login', {
-  beforeEach() {
-    application = startApp();
-  },
+module('Acceptance | login', function(hooks) {
+  setupApplicationTest(hooks);
+  setupMirage(hooks);
 
-  afterEach() {
-    server.shutdown();
-    run(application, 'destroy');
-  }
-});
+  test('visiting / when logged out should redirect to /login', async function(assert) {
+    assert.expect(1);
 
-test('visiting / when logged out should redirect to /login', function(assert) {
-  assert.expect(1);
+    await visit('/');
 
-  index.visit();
-
-  andThen(function() {
     assert.equal(currentURL(), '/login');
   });
-});
 
-test('visiting /login when logged in should redirect to /', function(assert) {
-  assert.expect(1);
+  test('visiting /login when logged in should redirect to /', async function(assert) {
+    assert.expect(1);
 
-  server.create('user');
-  authenticateSession(application, { accessToken: 'TOKEN' });
-  login.visit();
+    this.server.create('user');
+    authenticateSession(application, { accessToken: 'TOKEN' });
 
-  andThen(function() {
+    await visit('/login');
+
     assert.equal(currentURL(), '/');
   });
-});
 
-test('layout should show logged in user avatar', function(assert) {
-  assert.expect(2);
+  test('layout should show logged in user avatar', async function(assert) {
+    assert.expect(2);
 
-  let user = server.create('user');
-  authenticateSession(application, { accessToken: 'TOKEN' });
-  index.visit();
+    let user = this.server.create('user');
+    authenticateSession(application, { accessToken: 'TOKEN' });
 
-  andThen(function() {
-    let $userImage = find('img.avatar');
-    assert.equal($userImage.attr('alt'), user.login);
-    assert.equal($userImage.attr('src'), user.avatarUrl);
+    await visit('/');
+
+    assert.dom('img.avatar').hasAttribute('alt', user.login);
+    assert.dom('img.avatar').hasAttribute('src', user.avatarUrl);
   });
 });
