@@ -51,7 +51,7 @@
     "ember-resolver": "^4.5.4",
     "ember-simple-auth": "1.5.1",
     "ember-source": "~3.0.0",
-    "eslint-plugin-ember": "^5.0.0",
+    "eslint-plugin-ember": "^5.1.0",
     "eslint-plugin-ember-suave": "^1.0.0",
     "framework7": "1.6.5",
     "liquid-fire": "0.29.2",
