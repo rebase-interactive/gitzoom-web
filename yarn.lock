@@ -2647,9 +2647,9 @@ ember-cli-deprecation-workflow@0.2.4:
     quick-temp "^0.1.5"
     rimraf "^2.5.2"
 
-ember-cli-dotenv@2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/ember-cli-dotenv/-/ember-cli-dotenv-2.0.0.tgz#2c09fc5f8b60f690c9e02428b4f4e3f0b8c64421"
+ember-cli-dotenv@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/ember-cli-dotenv/-/ember-cli-dotenv-2.1.0.tgz#ac9d14884cbcefb7588e06e77e40ee06445975ee"
   dependencies:
     dotenv "^4.0.0"
     ember-cli-babel "^6.6.0"
