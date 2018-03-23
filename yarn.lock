@@ -3789,9 +3789,9 @@ fragment-cache@^0.2.1:
   dependencies:
     map-cache "^0.2.2"
 
-framework7@1.6.5:
-  version "1.6.5"
-  resolved "https://registry.yarnpkg.com/framework7/-/framework7-1.6.5.tgz#a35eacdb3f78d3013c972e5e8cc482f958ca592d"
+framework7@1.7.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/framework7/-/framework7-1.7.0.tgz#9c8b09053f9f5a30328c67b21da2f6512597a53c"
 
 fresh@0.5.2:
   version "0.5.2"
