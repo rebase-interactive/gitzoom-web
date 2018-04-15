@@ -1,13 +1,8 @@
-import Ember from 'ember';
 import ApplicationAdapter from './application';
-
-/*jshint -W079 */
-const {
-  String
-} = Ember;
+import { camelize } from '@ember/string';
 
 export default ApplicationAdapter.extend({
   pathForType(modelName) {
-    return String.camelize(modelName);
+    return camelize(modelName);
   }
 });
