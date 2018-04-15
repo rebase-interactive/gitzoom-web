@@ -1,10 +1,6 @@
-import Ember from 'ember';
 import ToriiAuthenticator from 'ember-simple-auth/authenticators/torii';
-
-const {
-  inject
-} = Ember;
+import { inject as service } from '@ember/service';
 
 export default ToriiAuthenticator.extend({
-  torii: inject.service()
+  torii: service()
 });
