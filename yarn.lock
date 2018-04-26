@@ -2783,6 +2783,12 @@ dom-serializer@0, dom-serializer@~0.1.0:
     domelementtype "~1.1.1"
     entities "~1.1.1"
 
+dom7@^2.0.3:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/dom7/-/dom7-2.0.5.tgz#d99e1f416cacd627c6d3ed7b90be47c8f3c7b258"
+  dependencies:
+    ssr-window "^1.0.0"
+
 domelementtype@1:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/domelementtype/-/domelementtype-1.3.0.tgz#b17aed82e8ab59e52dd9c19b1756e0fc187204c2"
@@ -4312,9 +4318,14 @@ fragment-cache@^0.2.1:
   dependencies:
     map-cache "^0.2.2"
 
-framework7@1.7.0:
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/framework7/-/framework7-1.7.0.tgz#9c8b09053f9f5a30328c67b21da2f6512597a53c"
+framework7@2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/framework7/-/framework7-2.2.1.tgz#100048548de13849450b806d4cebafc35a4ddd78"
+  dependencies:
+    dom7 "^2.0.3"
+    path-to-regexp "^2.1.0"
+    ssr-window "^1.0.0"
+    template7 "^1.3.5"
 
 fresh@0.5.2:
   version "0.5.2"
@@ -7702,6 +7713,10 @@ path-to-regexp@0.1.7:
   version "0.1.7"
   resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-0.1.7.tgz#df604178005f522f15eb4490e7247a1bfaa67f8c"
 
+path-to-regexp@^2.1.0:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-2.2.1.tgz#90b617025a16381a879bc82a38d4e8bdeb2bcf45"
+
 path-type@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/path-type/-/path-type-1.1.0.tgz#59c44f7ee491da704da415da5a4070ba4f8fe441"
@@ -9078,6 +9093,10 @@ sshpk@^1.7.0:
     jsbn "~0.1.0"
     tweetnacl "~0.14.0"
 
+ssr-window@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/ssr-window/-/ssr-window-1.0.0.tgz#8ed1b6beaa0a371ba7e74d6515d584c3f1cf973c"
+
 ssri@^4.1.2, ssri@^4.1.6, ssri@~4.1.6:
   version "4.1.6"
   resolved "https://registry.yarnpkg.com/ssri/-/ssri-4.1.6.tgz#0cb49b6ac84457e7bdd466cb730c3cb623e9a25b"
@@ -9337,6 +9356,10 @@ temp@0.8.3:
   dependencies:
     os-tmpdir "^1.0.0"
     rimraf "~2.2.6"
+
+template7@^1.3.5:
+  version "1.3.5"
+  resolved "https://registry.yarnpkg.com/template7/-/template7-1.3.5.tgz#8dac198b628313b0e53b22487e29d904e0455828"
 
 term-size@^1.2.0:
   version "1.2.0"

@@ -7,11 +7,9 @@
         </div>
         <div class="list-block">
           {{#if isProcessing}}
-            <span class="preloader">
-            </span>
+            <div class="preloader"></div>
           {{else}}
-            <a class="item-link list-button"
-              onclick={{action 'authenticate'}}>
+            <a class="button" {{action "authenticate"}}>
               {{svg-jar "mark-github" class="octicon"}}
                Sign In
             </a>

@@ -30,7 +30,6 @@ module.exports = function(defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
   app.import('node_modules/framework7/dist/css/framework7.ios.min.css');
-  app.import('node_modules/framework7/dist/css/framework7.ios.colors.min.css');
 
   return app.toTree();
 };
