@@ -3,8 +3,7 @@
     <div class="page">
       <div class="page-content login-screen-content">
         <div class="login-screen-title">
-          <span class="octicon octicon-bell">
-          </span>
+          {{svg-jar "bell" class="octicon" width="128" height="128"}}
         </div>
         <div class="list-block">
           {{#if isProcessing}}
@@ -13,8 +12,7 @@
           {{else}}
             <a class="item-link list-button"
               onclick={{action 'authenticate'}}>
-              <span class="octicon octicon-mark-github">
-              </span>
+              {{svg-jar "mark-github" class="octicon"}}
                Sign In
             </a>
           {{/if}}

@@ -6,19 +6,9 @@
 
   .login-screen-title {
     margin-bottom: 0;
-
-    .octicon {
-      position: relative;
-      left: 8px;
-      font-size: 16px * 8; // Octicons display best at multiples of 16px
-    }
   }
 }
 
 a.item-link.list-button {
   cursor: pointer;
-
-  .octicon {
-    font-size: 1em;
-  }
 }

@@ -6,6 +6,14 @@ module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
     'ember-cli-babel': {
       includePolyfill: true,
+    },
+    octicons: {
+      icons: null
+    },
+    svgJar: {
+      sourceDirs: [
+        'node_modules/octicons/build/svg'
+      ]
     }
   });
 
