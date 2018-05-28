@@ -2831,9 +2831,9 @@ dom-serializer@0, dom-serializer@~0.1.0:
     domelementtype "~1.1.1"
     entities "~1.1.1"
 
-dom7@^2.0.5:
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/dom7/-/dom7-2.0.5.tgz#d99e1f416cacd627c6d3ed7b90be47c8f3c7b258"
+dom7@^2.0.6:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/dom7/-/dom7-2.0.6.tgz#ea9f187de68635783cd5985fde52842763632903"
   dependencies:
     ssr-window "^1.0.0"
 
@@ -4391,11 +4391,11 @@ fragment-cache@^0.2.1:
   dependencies:
     map-cache "^0.2.2"
 
-framework7@2.2.5:
-  version "2.2.5"
-  resolved "https://registry.yarnpkg.com/framework7/-/framework7-2.2.5.tgz#417a27e88aa8c9bb09738852cf74ddd1af408185"
+framework7@2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/framework7/-/framework7-2.3.0.tgz#444602c3566faee901d9d04877a880c2f8bdd5e3"
   dependencies:
-    dom7 "^2.0.5"
+    dom7 "^2.0.6"
     path-to-regexp "^2.1.0"
     ssr-window "^1.0.0"
     template7 "^1.3.5"
