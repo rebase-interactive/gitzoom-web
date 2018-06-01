@@ -4392,9 +4392,9 @@ fragment-cache@^0.2.1:
   dependencies:
     map-cache "^0.2.2"
 
-framework7@2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/framework7/-/framework7-2.3.0.tgz#444602c3566faee901d9d04877a880c2f8bdd5e3"
+framework7@2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/framework7/-/framework7-2.3.1.tgz#a50ffc18117cf5c8840dba39348304f9e984085a"
   dependencies:
     dom7 "^2.0.6"
     path-to-regexp "^2.1.0"
