@@ -24,11 +24,11 @@ module.exports = function(environment) {
     },
     contentSecurityPolicy: {
       'default-src': "'none'",
-      'script-src': "'self'",
+      'script-src': "'self' 'unsafe-inline'",
       'font-src': "'self'",
       'connect-src': "'self' api.github.com " + process.env.GATEKEEPER_HOST,
-      'img-src': "'self' data: *.githubusercontent.com",
-      'style-src': "'self'",
+      'img-src': "'self' data: *.githubusercontent.com s3.amazonaws.com",
+      'style-src': "'self' 'unsafe-inline'",
       'media-src': "'self'"
     },
     torii: {
