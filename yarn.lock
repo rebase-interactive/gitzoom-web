@@ -3387,13 +3387,13 @@ ember-lodash@^4.17.3:
     ember-cli-babel "^6.10.0"
     lodash-es "^4.17.4"
 
-ember-octicons@^0.9.0:
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/ember-octicons/-/ember-octicons-0.9.0.tgz#3eec26cc085ad09f14df76c915f410a47166d70e"
+ember-octicons@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/ember-octicons/-/ember-octicons-0.10.0.tgz#73dc04d66d609e4a460b5707d923900d572ed89f"
   dependencies:
     broccoli-funnel "^2.0.1"
     broccoli-merge-trees "^3.0.0"
-    ember-cli-babel "^6.12.0"
+    ember-cli-babel "^6.14.1"
     ember-cli-htmlbars "^2.0.3"
     glob "^7.1.2"
 
