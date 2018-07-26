@@ -4209,10 +4209,11 @@ fragment-cache@^0.2.1:
     map-cache "^0.2.2"
 
 framework7@^3.0.0:
-  version "3.0.5"
-  resolved "https://registry.yarnpkg.com/framework7/-/framework7-3.0.5.tgz#4b715eff041c1844b6132f4b16d5e70f983609f9"
+  version "3.0.7"
+  resolved "https://registry.yarnpkg.com/framework7/-/framework7-3.0.7.tgz#eacfc988ce9b11c153ce2fc74e5fdfb74e0d786e"
   dependencies:
     dom7 "^2.0.7"
+    idate "^0.1.5"
     path-to-regexp "^2.1.0"
     ssr-window "^1.0.0"
     template7 "^1.3.6"
@@ -4928,6 +4929,10 @@ iconv-lite@~0.4.13:
   resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.21.tgz#c47f8733d02171189ebc4a400f3218d348094798"
   dependencies:
     safer-buffer "^2.1.0"
+
+idate@^0.1.5:
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/idate/-/idate-0.1.5.tgz#eea4df47c7e69a4eefad2fd51d970219afc632b0"
 
 ieee754@^1.1.4:
   version "1.1.8"
@@ -8898,8 +8903,8 @@ sshpk@^1.7.0:
     tweetnacl "~0.14.0"
 
 ssr-window@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/ssr-window/-/ssr-window-1.0.0.tgz#8ed1b6beaa0a371ba7e74d6515d584c3f1cf973c"
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/ssr-window/-/ssr-window-1.0.1.tgz#30752a6a4666e7767f0b7e6aa6fc2fdbd0d9b369"
 
 ssri@^4.1.2, ssri@^4.1.6, ssri@~4.1.6:
   version "4.1.6"
@@ -9141,8 +9146,8 @@ temp@0.8.3:
     rimraf "~2.2.6"
 
 template7@^1.3.6:
-  version "1.3.6"
-  resolved "https://registry.yarnpkg.com/template7/-/template7-1.3.6.tgz#ddb6df3c416745fa0ced635b6328a105eaa91c3a"
+  version "1.3.8"
+  resolved "https://registry.yarnpkg.com/template7/-/template7-1.3.8.tgz#64ee79d5deb66040fb3ba843875c6ddb34e95c15"
 
 term-size@^1.2.0:
   version "1.2.0"
